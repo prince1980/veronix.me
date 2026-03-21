@@ -405,7 +405,7 @@
       media.autoplay = false;
       media.loop = true;
       media.playsInline = true;
-      media.preload = "metadata";
+      media.preload = "none";
 
       // Prevent scripts from auto-playing videos unless marked as manual playback
       media.addEventListener("play", function (event) {

@@ -65,7 +65,7 @@
       link: "https://www.instagram.com/veronix.co/",
       target: "_blank",
       previewPoster: "./assets/short-01.jpg",
-      previewVideo: "./1.mov",
+      previewVideo: "./1.mp4",
       duration: "00:31",
       detailTitle: "Retention Led Cuts",
       detailText: "Hook first pacing, sharp subtitle treatment, motion accents, and polished finishing built for vertical screens."
@@ -77,7 +77,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-01.jpg",
-        video: "./1.mov",
+        video: "./1.mp4",
         duration: "00:31"
       },
       {
@@ -86,7 +86,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-02.jpg",
-        video: "./2.mov",
+        video: "./2.mp4",
         duration: "00:29"
       },
       {
@@ -95,7 +95,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-03.jpg",
-        video: "./3.mov",
+        video: "./3.mp4",
         duration: "00:39"
       },
       {
@@ -104,7 +104,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-04.jpg",
-        video: "./4.mov",
+        video: "./4.mp4",
         duration: "00:47"
       },
       {
@@ -113,7 +113,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-05.jpg",
-        video: "./5.mov",
+        video: "./5.mp4",
         duration: "00:31"
       },
       {
@@ -122,7 +122,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-06.jpg",
-        video: "./6.mov",
+        video: "./6.mp4",
         duration: "00:44"
       },
       {
@@ -131,7 +131,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-07.jpg",
-        video: "./7.mov",
+        video: "./7.mp4",
         duration: "00:45"
       },
       {
@@ -140,7 +140,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-08.jpg",
-        video: "./8.mov",
+        video: "./8.mp4",
         duration: "01:14"
       },
       {
@@ -149,7 +149,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-09.jpg",
-        video: "./9.mov",
+        video: "./9.mp4",
         duration: "00:53"
       },
       {
@@ -158,7 +158,7 @@
         link: "https://www.instagram.com/veronix.co/",
         target: "_blank",
         poster: "./assets/short-10.jpg",
-        video: "./10.mov",
+        video: "./10.mp4",
         duration: "01:37"
       }
     ],

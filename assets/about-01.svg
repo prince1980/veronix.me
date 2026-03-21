@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="100" y1="80" x2="900" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17191F"/>
+      <stop offset="1" stop-color="#0E1014"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="280" y1="260" x2="720" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A00"/>
+      <stop offset="1" stop-color="#FFD166"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="1200" rx="32" fill="url(#bg)"/>
+  <circle cx="500" cy="388" r="146" fill="url(#accent)"/>
+  <rect x="254" y="566" width="492" height="392" rx="246" fill="#F7F3EA" opacity=".1"/>
+  <text x="124" y="1088" fill="#F7F3EA" font-family="Arial, sans-serif" font-size="60" font-weight="700">Add portrait 01</text>
+</svg>

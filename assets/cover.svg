@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1080" y2="550" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17191F"/>
+      <stop offset="1" stop-color="#0E0F13"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="248" y1="126" x2="900" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A00"/>
+      <stop offset="1" stop-color="#FFD166"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+  <circle cx="240" cy="170" r="92" fill="url(#accent)" opacity=".92"/>
+  <circle cx="930" cy="460" r="118" fill="#F7F3EA" opacity=".12"/>
+  <path d="M302 380L582 176" stroke="#F7F3EA" stroke-linecap="round" stroke-width="20"/>
+  <path d="M620 452L918 236" stroke="#F7F3EA" stroke-linecap="round" stroke-width="20" opacity=".72"/>
+  <text x="96" y="486" fill="#F7F3EA" font-family="Arial, sans-serif" font-size="78" font-weight="700">Your Portfolio</text>
+  <text x="100" y="544" fill="#B8B2A7" font-family="Arial, sans-serif" font-size="28">Replace this cover in assets or update portfolio.js</text>
+</svg>

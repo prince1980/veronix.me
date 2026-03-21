@@ -1,0 +1,3 @@
+# Ignore all video files to speed up upload
+*.mov
+*.mp4

@@ -848,6 +848,28 @@
     font-size: 20px;
   }
 
+  /* Fix for About Page Images on Mobile */
+  .window-content.info-hero {
+    height: auto !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .window-content.info-hero img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    display: block !important;
+    object-fit: contain !important;
+    border-radius: 12px !important; /* Matches the inner window look */
+  }
+
+  .container-hero-image.info-hero {
+    height: auto !important;
+    margin-bottom: 24px !important;
+  }
+
   .veronix-reel-grid {
     grid-template-columns: 1fr;
   }

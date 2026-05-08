@@ -9,7 +9,7 @@
       homeTitle: "Veronix | Video Editing Portfolio",
       aboutTitle: "Veronix | About",
       description: "Veronix edits showreels, short form videos, and branded content for creators, businesses, and modern brands.",
-      ogImage: "https://veronix.me/logo.png"
+      ogImage: "./assets/og-image.png"
     },
     social: {
       instagram: {

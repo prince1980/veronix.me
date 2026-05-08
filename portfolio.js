@@ -63,7 +63,7 @@
       heading: "Veronix builds short form edits that feel polished, premium, and hard to skip.",
       bioHtml: "<span class=\"text-body-info-emphasis\">About Veronix</span><br /><br />Veronix is a video editing brand focused on short form content, visual polish, and sharp pacing for creators, brands, and businesses.<br /><br />The goal is simple: make every second feel intentional and every edit feel premium.<br />",
       experienceHtml: "<span class=\"text-body-info-emphasis\">What the work focuses on</span><br /><br />Retention driven hooks, clean captions, motion accents, color polish, and platform-ready delivery for reels, ads, and branded edits.<br /><br />If you need sharper visuals and better pacing, this site points people straight to the work and a direct contact link.<br />",
-      imageA: "./assets/about-01.svg",
+      imageA: "./assets/veronix-founder.png",
       imageB: "./assets/about-02.svg",
       signature: ""
     },

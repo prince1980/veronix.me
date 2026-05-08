@@ -21,8 +21,8 @@
         url: "https://www.youtube.com/@veronix-co"
       },
       whatsapp: {
-        label: "Contact Us",
-        url: "mailto:contact@veronix.me"
+        label: "Book a call",
+        url: "https://calendly.com/veronixx-media/30min"
       }
     },
     home: {
@@ -56,7 +56,7 @@
       eyebrow: "Contact",
       title: "Start the next edit.",
       text: "Project enquiries, short form work, and brand collaborations go through the contact link. Instagram and YouTube stay here for browsing work.",
-      primaryLabel: "Contact Us",
+      primaryLabel: "Book a call",
       note: "Fast replies for project enquiries."
     },
     about: {
@@ -69,8 +69,8 @@
     },
     footer: {
       copyright: "Copyright 2026 Veronix. All rights reserved.",
-      note: "Instagram, YouTube, and Contact Us available for enquiries.",
-      updated: "Contact Us"
+      note: "Instagram, YouTube, and Book a call available for enquiries.",
+      updated: "Book a call"
     }
   };
 

@@ -32,9 +32,16 @@
   <link rel="preconnect" href="https://d3e54v103j8qbb.cloudfront.net" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link href="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/css/perryw-2023.webflow.4a8586d83.css"
+  <link href="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/css/perryw-2023.webflow.4a8586d83.css"
     rel="stylesheet" type="text/css" />
   <link href="./veronix.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    /* Force hide all subtitles/captions */
+    ::cue { display: none !important; visibility: hidden !important; }
+    video::-webkit-media-text-track-container { display: none !important; }
+    video::cue { display: none !important; }
+  </style>
   <style>
     @media (min-width:992px) {
       html.w-mod-js:not(.w-mod-ix) [data-w-id="a91daa17-edea-3045-e068-85775e828427"] {
@@ -492,7 +499,7 @@
         <div class="nav-indicator-glow"></div>
         <div class="nav-pill"><a href="#" class="nav-toggle work w-inline-block">
             <div class="text-nav-toggle">Work</div>
-          </a><a data-w-id="b60fd352-a0aa-70fb-ab78-6a5d05bbacd8" href="./info" class="nav-toggle w-inline-block">
+          </a><a data-w-id="b60fd352-a0aa-70fb-ab78-6a5d05bbacd8" href="./info.html" class="nav-toggle w-inline-block">
             <div class="text-nav-toggle">About</div>
           </a>
           <div class="nav-indicator-pill"></div>
@@ -556,7 +563,7 @@
         <div class="text-menu-overline">MAIN</div>
         <div class="menu-items-wrapper"><a href="#" class="menu-item w-inline-block">
             <div class="text-mobile-menu">Work</div>
-          </a><a href="./info" class="menu-item w-inline-block">
+          </a><a href="./info.html" class="menu-item w-inline-block">
             <div class="text-mobile-menu">About</div>
           </a></div>
       </div>
@@ -689,87 +696,30 @@
           <div class="veronix-section-title" data-portfolio-text="showreel.title">Director's Cut</div>
           <div class="veronix-section-description" data-portfolio-text="showreel.description">A fast paced montage built to show range, rhythm, premium pacing, and clean visual storytelling.</div>
         </div>
-        <a class="veronix-showreel-card" data-portfolio-href="showreel.link" data-portfolio-target="showreel.target" href="https://www.youtube.com/@veronix-co" target="_blank" data-video-card>
-          <div class="veronix-showreel-overlay">
-            <div class="veronix-card-badge" data-portfolio-text="showreel.badge">Watch on YouTube</div>
-            <div class="veronix-card-arrow"><img
-                src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/63e206eedd964a5c5db19c91_23-icon-arrow-down.svg"
-                loading="lazy" alt="" class="veronix-card-arrow-icon" /></div>
-          </div>
-          <div class="veronix-showreel-frames">
+        <div class="veronix-showreel-card" data-video-card>
+          <div class="veronix-showreel-frames single-frame">
             <div class="veronix-showreel-frame">
               <video class="veronix-frame-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="showreel.panels.0.poster" poster="./assets/cover.svg"
-                data-portfolio-src="showreel.panels.0.video" aria-hidden="true"></video>
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd85d82fc5b438bc2d757c/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd85d82fc5b438bc2d757c/thumbnail-1-0.png?w=1080"
+                aria-hidden="true"></video>
               <div class="veronix-frame-topbar">
                 <div class="veronix-video-controls">
                   <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
                   <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
                 </div>
 
-                <div class="veronix-duration-chip" data-portfolio-text="showreel.panels.0.duration">00:25</div>
+                <div class="veronix-duration-chip">--:--</div>
               </div>
               <div class="veronix-frame-caption">
-                <div class="veronix-frame-title" data-portfolio-text="showreel.panels.0.label">Hook First</div>
-                <div class="veronix-frame-meta" data-portfolio-text="showreel.panels.0.meta">Attention led cuts</div>
-              </div>
-            </div>
-            <div class="veronix-showreel-frame">
-              <video class="veronix-frame-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="showreel.panels.1.poster" poster="./assets/cover.svg"
-                data-portfolio-src="showreel.panels.1.video" aria-hidden="true"></video>
-              <div class="veronix-frame-topbar">
-                <div class="veronix-video-controls">
-                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="showreel.panels.1.duration">00:14</div>
-              </div>
-              <div class="veronix-frame-caption">
-                <div class="veronix-frame-title" data-portfolio-text="showreel.panels.1.label">Motion Driven</div>
-                <div class="veronix-frame-meta" data-portfolio-text="showreel.panels.1.meta">Dynamic pacing</div>
+                <div class="veronix-frame-title" data-portfolio-text="showreel.title">Director's Cut</div>
+                <div class="veronix-frame-meta" data-portfolio-text="showreel.description">A fast paced montage built to show range and rhythm.</div>
               </div>
             </div>
           </div>
-        </a>
+        </div>
       </div>
 
-      <div class="veronix-shortform-block">
-        <a class="veronix-feature-card" data-portfolio-href="shortformFeature.link" data-portfolio-target="shortformFeature.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
-          <div class="veronix-feature-header">
-            <div>
-              <div class="veronix-feature-title" data-portfolio-text="shortformFeature.title">Short Form Edits</div>
-              <div class="veronix-feature-description" data-portfolio-html="shortformFeature.description"><span class="text-projectcard-description-company">Instagram Reels, 2026</span> - Fast edits made for reach, retention, and clean pacing.</div>
-            </div>
-            <div class="veronix-feature-tools">
-              <div class="veronix-card-badge" data-portfolio-text="shortformFeature.badge">Featured Reel</div>
-              <div class="veronix-card-arrow"><img
-                  src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/63e206eedd964a5c5db19c91_23-icon-arrow-down.svg"
-                  loading="lazy" alt="" class="veronix-card-arrow-icon" /></div>
-            </div>
-          </div>
-          <div class="veronix-feature-stage">
-            <div class="veronix-feature-poster">
-              <video class="veronix-feature-preview" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformFeature.previewPoster" poster="./assets/cover.svg"
-                data-portfolio-src="shortformFeature.previewVideo"></video>
-              <div class="veronix-feature-video-ui">
-                <div class="veronix-video-controls">
-                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformFeature.duration">00:27</div>
-              </div>
-            </div>
-            <div class="veronix-feature-detail">
-              <div class="veronix-feature-detail-title" data-portfolio-text="shortformFeature.detailTitle">Retention Led Cuts</div>
-              <div class="veronix-feature-detail-text" data-portfolio-text="shortformFeature.detailText">Hook first pacing, sharp subtitle treatment, motion accents, and polished finishing built for vertical screens.</div>
-            </div>
-          </div>
-        </a>
-      </div>
 
       <div class="veronix-gallery-block">
         <div class="veronix-gallery-copy">
@@ -778,176 +728,142 @@
           <div class="veronix-gallery-subtitle">Short Form - Vertical</div>
         </div>
         <div class="veronix-reel-grid">
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.0.link" data-portfolio-target="shortformGallery.0.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
+          <!-- Video 1 -->
+          <div class="veronix-reel-card">
             <div class="veronix-reel-thumb">
               <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.0.poster" poster="./assets/cover.svg"
-                data-portfolio-src="shortformGallery.0.video"></video>
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd85d82fc5b438bc2d757c/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd85d82fc5b438bc2d757c/thumbnail-1-0.png?w=1080"></video>
               <div class="veronix-reel-overlay">
                 <div class="veronix-video-controls">
                   <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
                   <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
                 </div>
-
                 <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.0.duration">00:31</div>
               </div>
             </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.0.title">Devin Style</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.0.meta">Short Form - Viral</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.1.link" data-portfolio-target="shortformGallery.1.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
+            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.0.title">Project 01</div>
+            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.0.meta">Short Form</div>
+          </div>
+          <!-- Video 2 -->
+          <div class="veronix-reel-card">
             <div class="veronix-reel-thumb">
               <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.1.poster" poster="./assets/cover.svg"
-                data-portfolio-src="shortformGallery.1.video"></video>
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd98ef37b9faaacecd07cb/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd98ef37b9faaacecd07cb/thumbnail-1-0.png?w=1080"></video>
               <div class="veronix-reel-overlay">
                 <div class="veronix-video-controls">
                   <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
                   <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
                 </div>
-
                 <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.1.duration">00:29</div>
               </div>
             </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.1.title">SaaS Ad</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.1.meta">Ad Creative</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.2.link" data-portfolio-target="shortformGallery.2.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
+            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.1.title">Project 02</div>
+            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.1.meta">Short Form</div>
+          </div>
+          <!-- Video 3 -->
+          <div class="veronix-reel-card">
             <div class="veronix-reel-thumb">
               <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.2.poster" poster="./assets/cover.svg"
-                data-portfolio-src="shortformGallery.2.video"></video>
-              <div class="veronix-reel-overlay">
-                                  <div class="veronix-video-controls">
-                    <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                    <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                  </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.2.duration">00:19</div>
-              </div>
-            </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.2.title">Real Estate Ad</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.2.meta">Ad Creative</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.3.link" data-portfolio-target="shortformGallery.3.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
-            <div class="veronix-reel-thumb">
-              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.3.poster" poster="./assets/reel-04.svg"
-                data-portfolio-src="shortformGallery.3.video"></video>
-              <div class="veronix-reel-overlay">
-                                  <div class="veronix-video-controls">
-                    <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                    <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                  </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.3.duration">00:18</div>
-              </div>
-            </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.3.title">Credit Ad</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.3.meta">Punch Cut</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.4.link" data-portfolio-target="shortformGallery.4.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
-            <div class="veronix-reel-thumb">
-              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.4.poster" poster="./assets/reel-05.svg"
-                data-portfolio-src="shortformGallery.4.video"></video>
-              <div class="veronix-reel-overlay">
-                                  <div class="veronix-video-controls">
-                    <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                    <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                  </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.4.duration">00:25</div>
-              </div>
-            </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.4.title">Fitness Promo</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.4.meta">Short Form</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.5.link" data-portfolio-target="shortformGallery.5.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
-            <div class="veronix-reel-thumb">
-              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.5.poster" poster="./assets/reel-06.svg"
-                data-portfolio-src="shortformGallery.5.video"></video>
-              <div class="veronix-reel-overlay">
-                                <div class="veronix-video-controls">
-                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.5.duration">00:20</div>
-              </div>
-            </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.5.title">Real Estate Reel</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.5.meta">Short Form</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.6.link" data-portfolio-target="shortformGallery.6.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
-            <div class="veronix-reel-thumb">
-              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.6.poster" poster="./assets/reel-01.svg"
-                data-portfolio-src="shortformGallery.6.video"></video>
-              <div class="veronix-reel-overlay">
-                                <div class="veronix-video-controls">
-                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.6.duration">00:45</div>
-              </div>
-            </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.6.title">Short Form 07</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.6.meta">Vertical Reel</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.7.link" data-portfolio-target="shortformGallery.7.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
-            <div class="veronix-reel-thumb">
-              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.7.poster" poster="./assets/reel-02.svg"
-                data-portfolio-src="shortformGallery.7.video"></video>
-              <div class="veronix-reel-overlay">
-                                <div class="veronix-video-controls">
-                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.7.duration">01:14</div>
-              </div>
-            </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.7.title">Short Form 08</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.7.meta">Vertical Reel</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.8.link" data-portfolio-target="shortformGallery.8.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
-            <div class="veronix-reel-thumb">
-              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.8.poster" poster="./assets/reel-03.svg"
-                data-portfolio-src="shortformGallery.8.video"></video>
-              <div class="veronix-reel-overlay">
-                                <div class="veronix-video-controls">
-                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
-                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
-                </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.8.duration">00:53</div>
-              </div>
-            </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.8.title">Short Form 09</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.8.meta">Vertical Reel</div>
-          </a>
-          <a class="veronix-reel-card" data-portfolio-href="shortformGallery.9.link" data-portfolio-target="shortformGallery.9.target" href="https://www.instagram.com/veronix.co/" target="_blank" data-video-card>
-            <div class="veronix-reel-thumb">
-              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
-                data-portfolio-poster="shortformGallery.9.poster" poster="./assets/reel-04.svg"
-                data-portfolio-src="shortformGallery.9.video"></video>
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd9c5137b9faaacecd5c03/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd9c5137b9faaacecd5c03/thumbnail-1-0.png?w=1080"></video>
               <div class="veronix-reel-overlay">
                 <div class="veronix-video-controls">
                   <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
                   <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
                 </div>
-
-                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.9.duration">01:37</div>
+                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.2.duration">00:39</div>
               </div>
             </div>
-            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.9.title">Short Form 10</div>
-            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.9.meta">Vertical Reel</div>
-          </a>
+            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.2.title">Project 03</div>
+            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.2.meta">Short Form</div>
+          </div>
+          <!-- Video 4 -->
+          <div class="veronix-reel-card">
+            <div class="veronix-reel-thumb">
+              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd9adb347cfac89d4f8110/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fd9adb347cfac89d4f8110/thumbnail-1-0.png?w=1080"></video>
+              <div class="veronix-reel-overlay">
+                <div class="veronix-video-controls">
+                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
+                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
+                </div>
+                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.3.duration">00:47</div>
+              </div>
+            </div>
+            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.3.title">Project 04</div>
+            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.3.meta">Short Form</div>
+          </div>
+          <!-- Video 5 -->
+          <div class="veronix-reel-card">
+            <div class="veronix-reel-thumb">
+              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fdad0cd4e28d9d1c77970a/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fdad0cd4e28d9d1c77970a/thumbnail-1-0.png?w=1080"></video>
+              <div class="veronix-reel-overlay">
+                <div class="veronix-video-controls">
+                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
+                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
+                </div>
+                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.4.duration">00:31</div>
+              </div>
+            </div>
+            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.4.title">Project 05</div>
+            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.4.meta">Short Form</div>
+          </div>
+          <!-- Video 6 -->
+          <div class="veronix-reel-card">
+            <div class="veronix-reel-thumb">
+              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fdaeb4d4e28d9d1c77c70d/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fdaeb4d4e28d9d1c77c70d/thumbnail-1-0.png?w=1080"></video>
+              <div class="veronix-reel-overlay">
+                <div class="veronix-video-controls">
+                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
+                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
+                </div>
+                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.5.duration">00:44</div>
+              </div>
+            </div>
+            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.5.title">Project 06</div>
+            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.5.meta">Short Form</div>
+          </div>
+          <!-- Video 7 -->
+          <div class="veronix-reel-card">
+            <div class="veronix-reel-thumb">
+              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fdb045347cfac89d51970c/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fdb045347cfac89d51970c/thumbnail-1-0.png?w=1080"></video>
+              <div class="veronix-reel-overlay">
+                <div class="veronix-video-controls">
+                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
+                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
+                </div>
+                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.6.duration">00:45</div>
+              </div>
+            </div>
+            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.6.title">Project 07</div>
+            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.6.meta">Short Form</div>
+          </div>
+          <!-- Video 8 -->
+          <div class="veronix-reel-card">
+            <div class="veronix-reel-thumb">
+              <video class="veronix-reel-media" data-portfolio-video="manual" muted loop playsinline preload="none"
+                data-portfolio-src="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fdcde637b9faaaced2adc0/main.m3u8"
+                poster="https://video.gumlet.io/69fd85762fc5b438bc2d6c06/69fdcde637b9faaaced2adc0/thumbnail-1-0.png?w=1080"></video>
+              <div class="veronix-reel-overlay">
+                <div class="veronix-video-controls">
+                  <div class="veronix-play-pill"><span class="veronix-play-icon"></span></div>
+                  <div class="veronix-volume-pill" role="button" aria-label="Unmute"><span class="veronix-volume-icon"></span></div>
+                </div>
+                <div class="veronix-duration-chip" data-portfolio-text="shortformGallery.7.duration">01:14</div>
+              </div>
+            </div>
+            <div class="veronix-reel-title" data-portfolio-text="shortformGallery.7.title">Project 08</div>
+            <div class="veronix-reel-meta" data-portfolio-text="shortformGallery.7.meta">Short Form</div>
+          </div>
         </div>
       </div>
     </div>

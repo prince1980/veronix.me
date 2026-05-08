@@ -9,7 +9,7 @@
       homeTitle: "Veronix | Video Editing Portfolio",
       aboutTitle: "Veronix | About",
       description: "Veronix edits showreels, short form videos, and branded content for creators, businesses, and modern brands.",
-      ogImage: "./logo.png"
+      ogImage: "https://veronix.me/logo.png"
     },
     social: {
       instagram: {
@@ -22,7 +22,7 @@
       },
       whatsapp: {
         label: "Contact Us",
-        url: "https://wa.me/8780764063"
+        url: "mailto:contact@veronix.me"
       }
     },
     home: {
@@ -39,128 +39,18 @@
       description: "A fast paced montage built to show range, rhythm, premium pacing, and clean visual storytelling.",
       badge: "Watch on YouTube",
       link: "https://www.youtube.com/@veronix-co",
-      target: "_blank",
-      panels: [
-        {
-          label: "Long Form 01",
-          meta: "16:9 Edit",
-          poster: "./assets/showreel-v1.jpg",
-          video: "./v1.mp4",
-          duration: "00:25"
-        },
-        {
-          label: "Long Form 02",
-          meta: "16:9 Edit",
-          poster: "./assets/showreel-v2.jpg",
-          video: "./v2.mp4",
-          duration: "00:14"
-        }
-      ]
+      target: "_blank"
     },
-    shortformFeature: {
-      eyebrow: "Short Form",
-      title: "Short Form Edits",
-      description: "<span class=\"text-projectcard-description-company\">Instagram Reels, 2026</span> - Fast edits made for reach, retention, and clean pacing.",
-      badge: "Featured Reel",
-      link: "https://www.instagram.com/veronix.co/",
-      target: "_blank",
-      previewPoster: "./assets/short-01.jpg",
-      previewVideo: "./1.mp4",
-      duration: "00:31",
-      detailTitle: "Retention Led Cuts",
-      detailText: "Hook first pacing, sharp subtitle treatment, motion accents, and polished finishing built for vertical screens."
-    },
+
     shortformGallery: [
-      {
-        title: "Short Form 01",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-01.jpg",
-        video: "./1.mp4",
-        duration: "00:31"
-      },
-      {
-        title: "Short Form 02",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-02.jpg",
-        video: "./2.mp4",
-        duration: "00:29"
-      },
-      {
-        title: "Short Form 03",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-03.jpg",
-        video: "./3.mp4",
-        duration: "00:39"
-      },
-      {
-        title: "Short Form 04",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-04.jpg",
-        video: "./4.mp4",
-        duration: "00:47"
-      },
-      {
-        title: "Short Form 05",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-05.jpg",
-        video: "./5.mp4",
-        duration: "00:31"
-      },
-      {
-        title: "Short Form 06",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-06.jpg",
-        video: "./6.mp4",
-        duration: "00:44"
-      },
-      {
-        title: "Short Form 07",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-07.jpg",
-        video: "./7.mp4",
-        duration: "00:45"
-      },
-      {
-        title: "Short Form 08",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-08.jpg",
-        video: "./8.mp4",
-        duration: "01:14"
-      },
-      {
-        title: "Short Form 09",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-09.jpg",
-        video: "./9.mp4",
-        duration: "00:53"
-      },
-      {
-        title: "Short Form 10",
-        meta: "Vertical Reel",
-        link: "https://www.instagram.com/veronix.co/",
-        target: "_blank",
-        poster: "./assets/short-10.jpg",
-        video: "./10.mp4",
-        duration: "01:37"
-      }
+      { title: "Project 01", meta: "Short Form" },
+      { title: "Project 02", meta: "Short Form" },
+      { title: "Project 03", meta: "Short Form" },
+      { title: "Project 04", meta: "Short Form" },
+      { title: "Project 05", meta: "Short Form" },
+      { title: "Project 06", meta: "Short Form" },
+      { title: "Project 07", meta: "Short Form" },
+      { title: "Project 08", meta: "Short Form" }
     ],
     contact: {
       eyebrow: "Contact",
@@ -273,49 +163,34 @@
     const supportsHover = window.matchMedia("(hover: hover)").matches;
 
     function safePlay(media) {
-      const playPromise = media.play();
-
-      if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(function () {});
+      if (media.play && typeof media.play === "function") {
+        const playPromise = media.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(function () {});
+        }
       }
     }
 
     function updateToggleState(toggle, media) {
-      if (!toggle) {
-        return;
-      }
-
+      if (!toggle) return;
       const isPlaying = !media.paused && !media.ended;
       toggle.classList.toggle("is-playing", isPlaying);
       toggle.setAttribute("aria-label", isPlaying ? "Pause video" : "Play video");
     }
 
     function attachToggle(media) {
-      const frame =
-        media.closest(".veronix-showreel-frame") ||
-        media.closest(".veronix-feature-poster") ||
-        media.closest(".veronix-reel-thumb");
+      const frame = media.closest(".veronix-showreel-frame") ||
+                    media.closest(".veronix-feature-poster") ||
+                    media.closest(".veronix-reel-thumb");
 
-      if (!frame) {
-        return null;
-      }
-
+      if (!frame) return null;
       const toggle = frame.querySelector(".veronix-play-pill");
-
-      if (!toggle) {
-        return null;
-      }
-
-      toggle.setAttribute("role", "button");
-      toggle.setAttribute("tabindex", "0");
-      toggle.setAttribute("aria-label", "Play video");
-      toggle.setAttribute("aria-pressed", "false");
+      if (!toggle) return null;
 
       function togglePlayback(event) {
         event.preventDefault();
         event.stopPropagation();
-        event.stopImmediatePropagation();
-
+        
         if (media.paused || media.ended) {
           safePlay(media);
           media.dataset.manualPlayback = "playing";
@@ -323,91 +198,91 @@
           media.pause();
           media.dataset.manualPlayback = "paused";
         }
-
         updateToggleState(toggle, media);
-        toggle.setAttribute("aria-pressed", String(!media.paused && !media.ended));
       }
 
       toggle.addEventListener("click", togglePlayback);
-      toggle.addEventListener("keydown", function (event) {
-        if (event.key !== "Enter" && event.key !== " ") {
-          return;
-        }
-
-        togglePlayback(event);
-      });
-
-      media.addEventListener("play", function () {
-        updateToggleState(toggle, media);
-        toggle.setAttribute("aria-pressed", "true");
-      });
-
-      media.addEventListener("pause", function () {
-        updateToggleState(toggle, media);
-        toggle.setAttribute("aria-pressed", "false");
-      });
+      
+      media.addEventListener("play", () => updateToggleState(toggle, media));
+      media.addEventListener("pause", () => updateToggleState(toggle, media));
 
       updateToggleState(toggle, media);
       return toggle;
     }
 
     function attachVolumeToggle(media) {
-      const frame =
-        media.closest(".veronix-showreel-frame") ||
-        media.closest(".veronix-feature-poster") ||
-        media.closest(".veronix-reel-thumb");
+      const frame = media.closest(".veronix-showreel-frame") ||
+                    media.closest(".veronix-feature-poster") ||
+                    media.closest(".veronix-reel-thumb");
 
-      if (!frame) {
-        return null;
-      }
-
+      if (!frame) return null;
       const volumeToggle = frame.querySelector(".veronix-volume-pill");
-
-      if (!volumeToggle) {
-        return null;
-      }
+      if (!volumeToggle) return null;
 
       function updateVolumeState() {
         volumeToggle.classList.toggle("is-unmuted", !media.muted);
         volumeToggle.setAttribute("aria-label", media.muted ? "Unmute video" : "Mute video");
       }
 
-      function toggleVolume(event) {
+      volumeToggle.addEventListener("click", (event) => {
         event.preventDefault();
         event.stopPropagation();
-        event.stopImmediatePropagation();
+        media.muted = !media.muted;
+        updateVolumeState();
+      });
 
-        // When unmuting one, unmute all to provide a better "sound on" experience
-        const shouldMute = !media.muted;
-        document.querySelectorAll("video").forEach((v) => {
-          v.muted = shouldMute;
-        });
-
-        // Update all toggle UI states
-        document.querySelectorAll(".veronix-volume-pill").forEach((pill) => {
-          pill.classList.toggle("is-unmuted", !shouldMute);
-        });
-      }
-
-      volumeToggle.addEventListener("click", toggleVolume);
       updateVolumeState();
       return volumeToggle;
     }
 
-    document.querySelectorAll("video[data-portfolio-video]").forEach(function (media) {
-      const source = media.getAttribute("src");
+    function formatTime(seconds) {
+      const min = Math.floor(seconds / 60);
+      const sec = Math.floor(seconds % 60);
+      return (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+    }
 
-      if (!source) {
-        return;
+    document.querySelectorAll("video.veronix-reel-media, video[data-portfolio-video]").forEach(function (media) {
+      const src = media.getAttribute("data-portfolio-src") || media.getAttribute("src");
+      const chip = media.closest(".veronix-reel-thumb") ? media.closest(".veronix-reel-thumb").querySelector(".veronix-duration-chip") : null;
+
+      if (src && src.includes(".m3u8")) {
+        if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+          const hls = new Hls({
+            startLevel: -1,
+            capLevelToPlayerSize: false,
+            enableWorker: true,
+            autoStartLoad: true
+          });
+          hls.loadSource(src);
+          hls.attachMedia(media);
+          
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            hls.currentLevel = hls.levels.length - 1;
+            hls.loadLevel = hls.levels.length - 1;
+          });
+
+          // Disable subtitles by default
+          hls.on(Hls.Events.SUBTITLE_TRACKS_UPDATED, function() {
+            hls.subtitleTrack = -1;
+            hls.subtitleDisplay = false;
+          });
+        } else if (media.canPlayType('application/vnd.apple.mpegurl')) {
+          media.src = src;
+        }
+      } else if (src) {
+        media.src = src;
       }
 
       media.muted = true;
       media.autoplay = false;
-      media.loop = true;
-      media.playsInline = true;
-      media.preload = "none";
+      media.dataset.manualPlayback = "paused";
+      
+      media.addEventListener("loadedmetadata", function() {
+        if (chip && media.duration && media.duration !== Infinity) {
+          chip.textContent = formatTime(media.duration);
+        }
+      });
 
-      // Prevent scripts from auto-playing videos unless marked as manual playback
       media.addEventListener("play", function (event) {
         if (media.dataset.manualPlayback !== "playing") {
           media.pause();

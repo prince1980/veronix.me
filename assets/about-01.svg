@@ -12,5 +12,4 @@
   <rect width="1000" height="1200" rx="32" fill="url(#bg)"/>
   <circle cx="500" cy="388" r="146" fill="url(#accent)"/>
   <rect x="254" y="566" width="492" height="392" rx="246" fill="#F7F3EA" opacity=".1"/>
-  <text x="124" y="1088" fill="#F7F3EA" font-family="Arial, sans-serif" font-size="60" font-weight="700">Add portrait 01</text>
 </svg>

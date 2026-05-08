@@ -4,6 +4,12 @@
 <head>
   
     <meta charset="utf-8" />
+  <script>
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && !location.hostname.includes('127.0.0.1')) {
+      location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }
+  </script>
+  <link rel="canonical" href="https://veronix.me/" />
   <title data-portfolio-text="seo.homeTitle">Veronix | Video Editing Portfolio</title>
   <meta
     content="Veronix edits short form videos, showreels, and brand visuals for creators, brands, and modern businesses."

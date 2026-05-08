@@ -497,7 +497,7 @@
       </div>
       <div class="nav-pill-wrapper">
         <div class="nav-indicator-glow"></div>
-        <div class="nav-pill"><a href="#" class="nav-toggle work w-inline-block">
+        <div class="nav-pill"><a href="#work" class="nav-toggle work w-inline-block" data-scroll-link>
             <div class="text-nav-toggle">Work</div>
           </a><a data-w-id="b60fd352-a0aa-70fb-ab78-6a5d05bbacd8" href="./info.html" class="nav-toggle w-inline-block">
             <div class="text-nav-toggle">About</div>
@@ -627,8 +627,8 @@
                   <div id="w-node-ebb1e125-4f59-8cf6-0b73-376972364a52-e330f4c5">
                     <div id="w-node-_785630cc-b7d0-294c-4a1a-e673b5a8db79-e330f4c5" class="text-hero-about" data-portfolio-html="home.desktopNote">Helped over 50+ clients! <br /><span class="text-hero-about-formerly">Delivering top-notch videos for social media, commercials, and more.</span></div>
                     <div class="veronix-hero-actions">
-                      <a class="veronix-button primary" data-portfolio-href="social.whatsapp.url" href="https://wa.me/8780764063" target="_blank" data-portfolio-text="social.whatsapp.label">Contact Us</a>
-                      <a class="veronix-button secondary" href="#work">View Work</a>
+                      <a class="veronix-button primary" data-portfolio-href="social.whatsapp.url" href="https://calendly.com/veronixx-media/30min" target="_blank" data-portfolio-text="social.whatsapp.label">Book a call</a>
+                      <a class="veronix-button secondary" href="#work" data-scroll-link>View Work</a>
                     </div>
                   </div>
                 </div>
@@ -654,8 +654,8 @@
         <div data-w-id="4f6a279d-1b18-5bf3-32ea-1e08b6e39e5e" class="hero-portrait-bottom">
           <div class="text-portrait-secondary" data-portfolio-html="home.mobileNote"><span class="text-open-to-new-opportunities">Helped over 50+ clients!<br /></span>Delivering top-notch videos for social media, commercials, and more.</div>
           <div class="veronix-hero-actions">
-            <a class="veronix-button primary" data-portfolio-href="social.whatsapp.url" href="https://wa.me/8780764063" target="_blank" data-portfolio-text="social.whatsapp.label">Contact Us</a>
-            <a class="veronix-button secondary" href="#work">View Work</a>
+            <a class="veronix-button primary" data-portfolio-href="social.whatsapp.url" href="https://calendly.com/veronixx-media/30min" target="_blank" data-portfolio-text="social.whatsapp.label">Book a call</a>
+            <a class="veronix-button secondary" href="#work" data-scroll-link>View Work</a>
           </div>
         </div>
       </div>
@@ -947,6 +947,20 @@
       setTimeout(function () {
         locoScroll.update();
       }, 2000);
+
+      // Handle internal scroll links
+      document.querySelectorAll("[data-scroll-link], .nav-toggle.work").forEach(function(link) {
+        link.addEventListener("click", function(e) {
+          const href = this.getAttribute("href");
+          if (href && href.startsWith("#")) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              locoScroll.scrollTo(target);
+            }
+          }
+        });
+      });
     }
   </script>
 

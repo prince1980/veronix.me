@@ -1463,7 +1463,8 @@ body {
 }
 
 /* Limit grain visibility exclusively to the hero section's background area */
-.section-hero .hero-noise {
+.section-hero .hero-noise,
+.section-hero-portrait .hero-noise {
   display: block !important;
 }
 

@@ -830,12 +830,6 @@ video.veronix-frame-media {
   position: relative;
   overflow: hidden;
   min-height: 700px;
-  border: 1px solid rgba(209, 172, 103, 0.18);
-  border-radius: 20px;
-  background: #0c0a07;
-  box-shadow:
-    0 0 0 1px rgba(209, 172, 103, 0.06),
-    0 34px 92px rgba(0, 0, 0, 0.44);
 }
 
 .veronix-cal-shell iframe {
@@ -843,8 +837,7 @@ video.veronix-frame-media {
   width: 100% !important;
   min-height: 700px !important;
   border: none !important;
-  background: #0c0a07 !important;
-  border-radius: 20px;
+  background: transparent !important;
 }
 
 .veronix-contact-section {

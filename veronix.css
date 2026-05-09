@@ -209,7 +209,7 @@ video.veronix-frame-media {
 .veronix-gallery-title,
 .veronix-contact-title {
   margin: 16px 0 28px;
-  margin-left: 0.04em; /* Optical alignment for negative letter-spacing */
+  margin-left: 0.08em; /* Increased optical alignment nudge for a perfectly flush left edge */
   color: var(--veronix-text);
   font-size: clamp(40px, 5vw, 66px);
   line-height: 1;
@@ -627,13 +627,16 @@ video.veronix-frame-media {
 .veronix-reel-thumb {
   aspect-ratio: 9 / 16;
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(19, 15, 11, 0.96), rgba(8, 8, 8, 1));
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.26);
+  background: transparent;
+  box-shadow: none;
   padding: 8px;
+  border: none;
 }
 
 .veronix-reel-media {
   border-radius: 16px;
+  border: none;
+  outline: none;
 }
 
 .veronix-reel-overlay {

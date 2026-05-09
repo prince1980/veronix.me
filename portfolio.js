@@ -189,20 +189,42 @@
         event.preventDefault();
         event.stopPropagation();
         
+        const volumeToggle = frame.querySelector(".veronix-volume-pill");
+
         if (media.paused || media.ended) {
+          media.muted = false; // Unmute on play
           safePlay(media);
           media.dataset.manualPlayback = "playing";
         } else {
           media.pause();
+          media.muted = true; // Mute on pause
           media.dataset.manualPlayback = "paused";
         }
+        
+        if (volumeToggle) {
+          volumeToggle.classList.toggle("is-unmuted", !media.muted);
+          volumeToggle.setAttribute("aria-label", media.muted ? "Unmute video" : "Mute video");
+        }
+        
         updateToggleState(toggle, media);
       }
 
       toggle.addEventListener("click", togglePlayback);
       
-      media.addEventListener("play", () => updateToggleState(toggle, media));
-      media.addEventListener("pause", () => updateToggleState(toggle, media));
+      media.addEventListener("play", function() {
+        updateToggleState(toggle, media);
+        const volumeToggle = frame.querySelector(".veronix-volume-pill");
+        if (volumeToggle) {
+          volumeToggle.classList.toggle("is-unmuted", !media.muted);
+        }
+      });
+      media.addEventListener("pause", function() {
+        updateToggleState(toggle, media);
+        const volumeToggle = frame.querySelector(".veronix-volume-pill");
+        if (volumeToggle) {
+          volumeToggle.classList.toggle("is-unmuted", !media.muted);
+        }
+      });
 
       updateToggleState(toggle, media);
       return toggle;

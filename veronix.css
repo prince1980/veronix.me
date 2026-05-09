@@ -1446,6 +1446,47 @@ body {
   opacity: 0.45;
 }
 
+/* --- Tablet Responsiveness (iPad/Tablets) --- */
+@media screen and (max-width: 991px) {
+  .window-content {
+    padding: 64px 48px 140px !important; /* Balanced padding for tablet view */
+  }
+
+  .hero-text-content {
+    grid-row-gap: 32px !important;
+  }
+
+  .text-hero {
+    font-size: 56px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  .veronix-hero-actions {
+    margin-top: 40px !important;
+    gap: 16px !important;
+  }
+
+  .veronix-button {
+    height: 52px !important;
+    padding: 0 32px !important;
+  }
+
+  .veronix-section-title,
+  .veronix-gallery-title {
+    font-size: 52px !important;
+  }
+
+  .veronix-gallery-grid {
+    grid-template-columns: 1fr 1fr !important; /* 2 columns for tablet */
+    gap: 24px !important;
+  }
+
+  .veronix-contact-shell {
+    padding: 60px 48px !important;
+  }
+}
+
 /* --- Cinematic Film Grain Effect --- */
 .hero-noise {
   display: none !important; /* Hide globally by default */

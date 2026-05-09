@@ -1,4 +1,6 @@
 :root {
+  --veronix-gold: #c5a358;
+  --veronix-dark: #0a0a0a;
   --veronix-gold-1: #f1d4a0;
   --veronix-gold-2: #ac7a48;
   --veronix-bg: #060606;
@@ -10,6 +12,13 @@
   --veronix-stroke-strong: rgba(241, 212, 160, 0.24);
   --veronix-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
   --veronix-gradient: linear-gradient(135deg, var(--veronix-gold-1), var(--veronix-gold-2));
+}
+
+video.veronix-reel-media,
+video.veronix-frame-media {
+  background-color: #000;
+  object-fit: cover;
+  display: block;
 }
 
 .logo-block .logomark,

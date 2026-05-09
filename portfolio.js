@@ -255,32 +255,39 @@
           media.src = src;
         } else if (typeof Hls !== 'undefined' && Hls.isSupported()) {
           const hls = new Hls({
-            startLevel: -1,
+            startLevel: -1, // Let ABR handle the start quality for better reliability
             capLevelToPlayerSize: true,
             enableWorker: true,
             autoStartLoad: true,
-            manifestLoadingMaxRetry: 3,
-            levelLoadingMaxRetry: 3
+            manifestLoadingMaxRetry: 5,
+            levelLoadingMaxRetry: 5,
+            fragLoadingMaxRetry: 5
           });
           hls.loadSource(src);
           hls.attachMedia(media);
           
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            hls.currentLevel = hls.levels.length - 1;
+            // No longer forcing the highest level immediately to prevent stalls on slow connections
           });
 
-          // Recovery logic for stalls
+          // Recovery logic for stalls and black screens
           hls.on(Hls.Events.ERROR, function (event, data) {
             if (data.fatal) {
               switch (data.type) {
                 case Hls.ErrorTypes.NETWORK_ERROR:
+                  console.log("HLS Network Error, retrying...");
                   hls.startLoad();
                   break;
                 case Hls.ErrorTypes.MEDIA_ERROR:
+                  console.log("HLS Media Error, recovering...");
                   hls.recoverMediaError();
                   break;
                 default:
+                  console.log("HLS Fatal Error, swapping to native if possible");
                   hls.destroy();
+                  if (canPlayNative) {
+                    media.src = src;
+                  }
                   break;
               }
             }
@@ -323,8 +330,9 @@
   bindHtml();
   bindAttribute("data-portfolio-content", "content");
   bindAttribute("data-portfolio-href", "href");
-  bindAttribute("data-portfolio-src", "src");
   bindAttribute("data-portfolio-poster", "poster");
+  // Removed direct src binding to prevent clashing with HLS initialization logic
+  // bindAttribute("data-portfolio-src", "src"); 
   bindTarget();
   bindBlankRel();
   bindHideIfEmpty();

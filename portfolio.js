@@ -268,6 +268,13 @@
           hls.loadSource(src);
           hls.attachMedia(media);
           
+          // Thumbnail stabilizer: Mirror poster to background to prevent "fading" during engine init
+          if (media.getAttribute("poster")) {
+            media.style.backgroundImage = `url(${media.getAttribute("poster")})`;
+            media.style.backgroundSize = "cover";
+            media.style.backgroundPosition = "center";
+          }
+
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
             // Hard-Filter: Remove any levels below 1080p if possible
             // If levels exist, pick the absolute highest and lock it

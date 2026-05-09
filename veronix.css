@@ -183,9 +183,12 @@ video.veronix-frame-media {
 }
 
 .veronix-work-copy,
-.veronix-gallery-copy,
-.veronix-contact-copy {
+.veronix-gallery-copy {
   margin-bottom: 48px;
+}
+
+.veronix-contact-copy {
+  margin-bottom: 32px;
 }
 
 .veronix-gallery-copy {
@@ -205,7 +208,7 @@ video.veronix-frame-media {
 .veronix-section-title,
 .veronix-gallery-title,
 .veronix-contact-title {
-  margin: 12px 0 16px;
+  margin: 16px 0 28px;
   color: var(--veronix-text);
   font-size: clamp(40px, 5vw, 66px);
   line-height: 1;
@@ -224,9 +227,14 @@ video.veronix-frame-media {
 }
 
 .veronix-section-description,
-.veronix-gallery-subtitle,
+.veronix-gallery-subtitle {
+  max-width: 700px;
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.65;
+}
+
 .veronix-contact-text {
-  max-width: 720px;
+  max-width: 580px;
   font-size: clamp(16px, 2vw, 19px);
   line-height: 1.65;
 }
@@ -254,7 +262,7 @@ video.veronix-frame-media {
   position: absolute;
   inset: 10px;
   border: 1px solid rgba(241, 212, 160, 0.08);
-  border-radius: 22px; /* 32 - 10 = 22 */
+  border-radius: 30px; /* 40 - 10 = 30 */
   pointer-events: none;
 }
 
@@ -387,7 +395,7 @@ video.veronix-frame-media {
 .veronix-showreel-frame {
   aspect-ratio: 16 / 9;
   min-height: 0;
-  border-radius: 22px; /* Matches inner stroke */
+  border-radius: 30px; /* Matches inner stroke */
   border: 1px solid rgba(241, 212, 160, 0.08);
   background: linear-gradient(180deg, rgba(20, 15, 11, 0.96), rgba(8, 8, 8, 1));
 }
@@ -621,6 +629,11 @@ video.veronix-frame-media {
   border: 1px solid rgba(241, 212, 160, 0.08);
   background: linear-gradient(180deg, rgba(19, 15, 11, 0.96), rgba(8, 8, 8, 1));
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.26);
+  padding: 8px;
+}
+
+.veronix-reel-media {
+  border-radius: 16px;
 }
 
 .veronix-reel-overlay {
@@ -643,6 +656,7 @@ video.veronix-frame-media {
 
 .veronix-reel-title {
   margin-top: 18px;
+  padding-left: 14px;
   color: var(--veronix-text);
   font-size: 18px;
   font-weight: 700;
@@ -650,6 +664,7 @@ video.veronix-frame-media {
 
 .veronix-reel-meta {
   margin-top: 4px;
+  padding-left: 14px;
   font-size: 14px;
 }
 
@@ -851,18 +866,24 @@ video.veronix-frame-media {
 }
 
 .veronix-contact-card {
-  padding: 34px;
+  padding: 64px 56px;
 }
 
 .veronix-contact-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 24px;
+  margin-top: 32px;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.veronix-contact-actions .veronix-button {
+  height: auto;
 }
 
 .veronix-contact-note {
-  margin-top: 16px;
+  margin-top: 24px;
   font-size: 15px;
 }
 

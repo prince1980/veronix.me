@@ -1006,7 +1006,7 @@
         </div>
         <div class="veronix-cal-shell">
           <!-- Cal.com inline embed begin -->
-          <div id="my-cal-inline-30min" style="width:100%;height:100%;overflow:scroll"></div>
+          <div id="my-cal-inline-30min" style="width:100%;"></div>
           <script type="text/javascript">
             (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
             Cal("init", "30min", {origin:"https://app.cal.com"});
@@ -1033,11 +1033,14 @@
               action: "__dimensionChanged",
               callback: function(e) {
                 const h = e && e.data && e.data.iframeHeight;
-                if (h) {
+                if (h && h > 0) {
                   const shell = document.querySelector(".veronix-cal-shell");
+                  const wrapper = document.getElementById("my-cal-inline-30min");
                   const iframe = document.querySelector(".veronix-cal-shell iframe");
-                  if (shell) shell.style.minHeight = (h + 40) + "px";
-                  if (iframe) { iframe.style.height = (h + 40) + "px"; iframe.style.minHeight = (h + 40) + "px"; }
+                  const total = h + 2;
+                  if (shell) { shell.style.height = total + "px"; shell.style.minHeight = total + "px"; }
+                  if (wrapper) { wrapper.style.height = total + "px"; }
+                  if (iframe) { iframe.style.height = total + "px"; }
                 }
               }
             });

@@ -246,27 +246,51 @@
       const chip = media.closest(".veronix-reel-thumb") ? media.closest(".veronix-reel-thumb").querySelector(".veronix-duration-chip") : null;
 
       if (src && src.includes(".m3u8")) {
-        if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        const canPlayNative = media.canPlayType('application/vnd.apple.mpegurl');
+
+        // Prioritize native HLS on iOS/Safari for better stability in in-app browsers
+        if ((isIOS || isSafari) && canPlayNative) {
+          media.src = src;
+        } else if (typeof Hls !== 'undefined' && Hls.isSupported()) {
           const hls = new Hls({
             startLevel: -1,
-            capLevelToPlayerSize: false,
+            capLevelToPlayerSize: true,
             enableWorker: true,
-            autoStartLoad: true
+            autoStartLoad: true,
+            manifestLoadingMaxRetry: 3,
+            levelLoadingMaxRetry: 3
           });
           hls.loadSource(src);
           hls.attachMedia(media);
           
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
             hls.currentLevel = hls.levels.length - 1;
-            hls.loadLevel = hls.levels.length - 1;
           });
 
-          // Disable subtitles by default
+          // Recovery logic for stalls
+          hls.on(Hls.Events.ERROR, function (event, data) {
+            if (data.fatal) {
+              switch (data.type) {
+                case Hls.ErrorTypes.NETWORK_ERROR:
+                  hls.startLoad();
+                  break;
+                case Hls.ErrorTypes.MEDIA_ERROR:
+                  hls.recoverMediaError();
+                  break;
+                default:
+                  hls.destroy();
+                  break;
+              }
+            }
+          });
+
           hls.on(Hls.Events.SUBTITLE_TRACKS_UPDATED, function() {
             hls.subtitleTrack = -1;
             hls.subtitleDisplay = false;
           });
-        } else if (media.canPlayType('application/vnd.apple.mpegurl')) {
+        } else if (canPlayNative) {
           media.src = src;
         }
       } else if (src) {

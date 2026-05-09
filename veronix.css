@@ -1456,6 +1456,10 @@ body {
   background-repeat: repeat;
   background-size: 240px !important; 
   mix-blend-mode: overlay !important;
+  
+  /* Radial mask to focus grain at the top-middle hotspot only */
+  -webkit-mask-image: radial-gradient(circle closest-corner at 50% 0%, black 0%, transparent 80%);
+  mask-image: radial-gradient(circle closest-corner at 50% 0%, black 0%, transparent 80%);
 }
 
 /* Limit grain visibility exclusively to the hero section's background area */

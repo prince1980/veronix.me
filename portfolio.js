@@ -325,7 +325,19 @@
     });
   }
 
+  function cleanUrls() {
+    try {
+      let path = window.location.pathname;
+      if (path.endsWith("/index.html")) {
+        window.history.replaceState({}, document.title, path.replace("/index.html", "/"));
+      } else if (path.endsWith(".html")) {
+        window.history.replaceState({}, document.title, path.replace(".html", ""));
+      }
+    } catch (e) {}
+  }
+
   document.documentElement.lang = "en";
+  cleanUrls();
   bindText();
   bindHtml();
   bindAttribute("data-portfolio-content", "content");

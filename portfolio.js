@@ -255,27 +255,38 @@
           media.src = src;
         } else if (typeof Hls !== 'undefined' && Hls.isSupported()) {
           const hls = new Hls({
-            startLevel: -1, // Will set to highest in MANIFEST_PARSED
-            capLevelToPlayerSize: false, // Don't downscale for smaller screens
+            startLevel: -1, 
+            capLevelToPlayerSize: false,
             enableWorker: true,
             autoStartLoad: true,
-            maxBufferLength: 30, // Increase buffer for high-res
-            maxMaxBufferLength: 60,
-            manifestLoadingMaxRetry: 10,
-            levelLoadingMaxRetry: 10
+            maxBufferLength: 60, 
+            maxMaxBufferLength: 120,
+            manifestLoadingMaxRetry: 20,
+            levelLoadingMaxRetry: 20,
+            fragLoadingMaxRetry: 20,
+            // Fast start settings
+            initialLiveManifestSize: 1,
+            appendErrorMaxRetry: 10,
+            enableLowLatencyMode: true
           });
           hls.loadSource(src);
           hls.attachMedia(media);
           
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            // Force Highest Quality (1080p/2K/4K)
-            // We set currentLevel to the last level (highest) and disable auto-scaling down
             hls.currentLevel = hls.levels.length - 1;
             hls.autoLevelEnabled = false; 
-            console.log("Veronix Engine: Quality locked to " + hls.levels[hls.currentLevel].height + "p");
+            // Aggressively pre-fill the buffer
+            hls.startLoad();
           });
 
-          // Recovery logic - if it fails, try the next highest instead of dropping to low res
+          // Visual stability: Hide video until it's actually playing to avoid black frames
+          media.style.opacity = "0";
+          media.style.transition = "opacity 0.5s ease";
+
+          media.addEventListener("playing", function() {
+            media.style.opacity = "1";
+          });
+
           hls.on(Hls.Events.ERROR, function (event, data) {
             if (data.fatal) {
               switch (data.type) {

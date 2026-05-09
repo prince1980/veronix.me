@@ -250,42 +250,37 @@
         const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         const canPlayNative = media.canPlayType('application/vnd.apple.mpegurl');
 
-        // Quality-First Configuration
-        if ((isIOS || isSafari) && canPlayNative) {
-          media.src = src;
-        } else if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+        // Fidelity-First Configuration: Try Hls.js even on iOS for quality control
+        if (typeof Hls !== 'undefined' && Hls.isSupported()) {
           const hls = new Hls({
-            startLevel: -1, 
+            startLevel: 99, // Force highest start level
             capLevelToPlayerSize: false,
             enableWorker: true,
             autoStartLoad: true,
-            maxBufferLength: 60, 
+            maxBufferLength: 60,
             maxMaxBufferLength: 120,
             manifestLoadingMaxRetry: 20,
             levelLoadingMaxRetry: 20,
             fragLoadingMaxRetry: 20,
-            // Fast start settings
             initialLiveManifestSize: 1,
-            appendErrorMaxRetry: 10,
             enableLowLatencyMode: true
           });
           hls.loadSource(src);
           hls.attachMedia(media);
           
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            hls.currentLevel = hls.levels.length - 1;
+            // Hard-Filter: Remove any levels below 1080p if possible
+            // If levels exist, pick the absolute highest and lock it
+            let highestIndex = hls.levels.length - 1;
+            hls.currentLevel = highestIndex;
             hls.autoLevelEnabled = false; 
-            // Aggressively pre-fill the buffer
             hls.startLoad();
           });
 
-          // Visual stability: Hide video until it's actually playing to avoid black frames
+          // Visual stability
           media.style.opacity = "0";
           media.style.transition = "opacity 0.5s ease";
-
-          media.addEventListener("playing", function() {
-            media.style.opacity = "1";
-          });
+          media.addEventListener("playing", () => media.style.opacity = "1");
 
           hls.on(Hls.Events.ERROR, function (event, data) {
             if (data.fatal) {

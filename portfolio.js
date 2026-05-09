@@ -335,6 +335,43 @@
     });
   }
 
+  function initFaq() {
+    document.querySelectorAll(".veronix-faq-item").forEach(function (item) {
+      const button = item.querySelector(".veronix-faq-question");
+      const answer = item.querySelector(".veronix-faq-answer");
+
+      if (!button || !answer) return;
+
+      function setOpen(isOpen) {
+        item.classList.toggle("is-open", isOpen);
+        button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+        if (isOpen) {
+          answer.hidden = false;
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          requestAnimationFrame(function () {
+            answer.style.maxHeight = "0px";
+          });
+          window.setTimeout(function () {
+            if (!item.classList.contains("is-open")) {
+              answer.hidden = true;
+            }
+          }, 320);
+        }
+
+        window.setTimeout(function () {
+          window.dispatchEvent(new Event("resize"));
+        }, 340);
+      }
+
+      button.addEventListener("click", function () {
+        setOpen(button.getAttribute("aria-expanded") !== "true");
+      });
+    });
+  }
+
   function cleanUrls() {
     try {
       let path = window.location.pathname;
@@ -359,4 +396,5 @@
   bindBlankRel();
   bindHideIfEmpty();
   initVideos();
+  initFaq();
 })();

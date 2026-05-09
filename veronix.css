@@ -648,6 +648,130 @@ video.veronix-frame-media {
   font-size: 14px;
 }
 
+.veronix-faq-section {
+  width: min(980px, 100%);
+  margin: 118px auto 0;
+}
+
+.veronix-faq-header {
+  max-width: 760px;
+  margin: 0 auto 68px;
+  text-align: center;
+}
+
+.veronix-faq-title {
+  margin: 0;
+  color: var(--veronix-text);
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.veronix-faq-intro {
+  max-width: 680px;
+  margin: 18px auto 0;
+  color: rgba(243, 239, 232, 0.56);
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.55;
+}
+
+.veronix-faq-list {
+  display: grid;
+  gap: 24px;
+}
+
+.veronix-faq-item {
+  overflow: hidden;
+  border: 1px solid rgba(241, 212, 160, 0.06);
+  border-radius: 44px;
+  background: rgba(14, 14, 14, 0.88);
+  box-shadow: 0 28px 62px rgba(0, 0, 0, 0.16);
+  transition: border-color 220ms ease, background-color 220ms ease;
+}
+
+.veronix-faq-item.is-open {
+  border-color: rgba(241, 212, 160, 0.12);
+  background: rgba(17, 17, 17, 0.94);
+}
+
+.veronix-faq-question {
+  width: 100%;
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px 34px;
+  border: 0;
+  background: transparent;
+  color: var(--veronix-text);
+  font: inherit;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.veronix-faq-question:focus-visible {
+  outline: 2px solid rgba(241, 212, 160, 0.7);
+  outline-offset: -10px;
+}
+
+.veronix-faq-icon {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  transition: transform 260ms ease, background-color 260ms ease;
+}
+
+.veronix-faq-icon::before,
+.veronix-faq-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(243, 239, 232, 0.96);
+  transform: translate(-50%, -50%);
+  transition: transform 260ms ease, opacity 260ms ease;
+}
+
+.veronix-faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.veronix-faq-item.is-open .veronix-faq-icon {
+  transform: rotate(180deg);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.veronix-faq-item.is-open .veronix-faq-icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.veronix-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 320ms ease;
+}
+
+.veronix-faq-answer-inner {
+  padding: 0 34px 34px;
+  color: rgba(243, 239, 232, 0.58);
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
 .veronix-contact-section {
   padding: 24px 32px 110px;
 }
@@ -722,6 +846,14 @@ video.veronix-frame-media {
   .veronix-feature-stage {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .veronix-faq-section {
+    margin-top: 92px;
+  }
+
+  .veronix-faq-header {
+    margin-bottom: 48px;
   }
 
   .veronix-reel-grid {
@@ -819,6 +951,34 @@ video.veronix-frame-media {
   .veronix-reel-grid {
     grid-template-columns: 1fr;
   }
+
+  .veronix-faq-section {
+    margin-top: 76px;
+  }
+
+  .veronix-faq-header {
+    margin-bottom: 34px;
+  }
+
+  .veronix-faq-item {
+    border-radius: 30px;
+  }
+
+  .veronix-faq-question {
+    min-height: 78px;
+    padding: 24px 22px;
+    gap: 18px;
+  }
+
+  .veronix-faq-answer-inner {
+    padding: 0 22px 26px;
+  }
+
+  .veronix-faq-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
 }
 
 @media (max-width: 479px) {
@@ -881,6 +1041,31 @@ video.veronix-frame-media {
 
   .veronix-reel-grid {
     grid-template-columns: 1fr;
+  }
+
+  .veronix-faq-title {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+
+  .veronix-faq-intro {
+    font-size: 15px;
+  }
+
+  .veronix-faq-list {
+    gap: 16px;
+  }
+
+  .veronix-faq-question {
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veronix-faq-answer,
+  .veronix-faq-icon,
+  .veronix-faq-icon::before,
+  .veronix-faq-icon::after {
+    transition: none;
   }
 }
 

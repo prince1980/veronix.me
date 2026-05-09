@@ -992,7 +992,7 @@
         </div>
       </section>
 
-      <section class="veronix-request-section" aria-labelledby="request-project-title">
+      <section class="veronix-request-section" aria-labelledby="request-project-title" data-scroll-section>
         <div class="veronix-request-header">
           <div class="veronix-request-pill">
             <svg class="veronix-request-pill-icon" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
@@ -1004,9 +1004,9 @@
           <h2 class="veronix-request-title" id="request-project-title">Book a call</h2>
           <p class="veronix-request-copy">Let's talk scope, timeline, and budget - no fluff, just clarity.</p>
         </div>
-        <div class="veronix-cal-shell" data-scroll-ignore>
+        <div class="veronix-cal-shell" data-scroll>
           <!-- Cal.com inline embed begin -->
-          <div id="my-cal-inline-30min" style="width:100%;height:800px;"></div>
+          <div id="my-cal-inline-30min" style="width:100%;height:100%;"></div>
           <script type="text/javascript">
             (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
             Cal("init", "30min", {origin:"https://app.cal.com"});

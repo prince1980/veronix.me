@@ -828,31 +828,27 @@ video.veronix-frame-media {
 
 .veronix-cal-shell {
   position: relative;
-  overflow: hidden;
-  height: auto;
+  overflow: visible !important;
+  min-height: 800px;
   border: 1px solid rgba(209, 172, 103, 0.18);
   border-radius: 20px;
   background: #0c0a07;
   box-shadow:
     0 0 0 1px rgba(209, 172, 103, 0.06),
     0 34px 92px rgba(0, 0, 0, 0.44);
-}
-
-.veronix-cal-shell #my-cal-inline-30min {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  pointer-events: all !important;
+  z-index: 5;
 }
 
 .veronix-cal-shell iframe {
   display: block;
   width: 100% !important;
-  height: auto !important;
-  min-height: 0 !important;
+  height: 800px !important;
+  min-height: 800px !important;
   border: none !important;
   background: #0c0a07 !important;
-  border-radius: 0;
-  transition: height 0.3s ease;
+  border-radius: 20px;
+  pointer-events: all !important;
 }
 
 .veronix-contact-section {
@@ -1078,11 +1074,13 @@ video.veronix-frame-media {
   .veronix-cal-shell {
     margin-left: -6px;
     margin-right: -6px;
-    min-height: 780px;
+    min-height: 850px;
+    overflow: visible !important;
   }
 
   .veronix-cal-shell iframe {
-    min-height: 780px !important;
+    min-height: 850px !important;
+    height: 850px !important;
   }
 }
 

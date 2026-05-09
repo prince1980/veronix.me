@@ -1029,6 +1029,18 @@
               "hideEventTypeDetails":false,
               "layout":"month_view"
             });
+            Cal.ns["30min"]("on", {
+              action: "__dimensionChanged",
+              callback: function(e) {
+                const h = e && e.data && e.data.iframeHeight;
+                if (h) {
+                  const shell = document.querySelector(".veronix-cal-shell");
+                  const iframe = document.querySelector(".veronix-cal-shell iframe");
+                  if (shell) shell.style.minHeight = (h + 40) + "px";
+                  if (iframe) { iframe.style.height = (h + 40) + "px"; iframe.style.minHeight = (h + 40) + "px"; }
+                }
+              }
+            });
           </script>
           <!-- Cal.com inline embed end -->
         </div>

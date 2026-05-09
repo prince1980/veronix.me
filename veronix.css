@@ -209,7 +209,7 @@ video.veronix-frame-media {
 .veronix-gallery-title,
 .veronix-contact-title {
   margin: 16px 0 28px;
-  margin-left: 0.08em; /* Increased optical alignment nudge for a perfectly flush left edge */
+  margin-left: 0.12em; /* Aggressive optical nudge for perfectly flush vertical alignment */
   color: var(--veronix-text);
   font-size: clamp(40px, 5vw, 66px);
   line-height: 1;
@@ -402,13 +402,17 @@ video.veronix-frame-media {
 }
 
 .veronix-showreel-frame::after,
-.veronix-feature-poster::after,
-.veronix-reel-thumb::after {
+.veronix-feature-poster::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 38%, rgba(0, 0, 0, 0.68) 100%);
   pointer-events: none;
+}
+
+/* Remove overlay gradient from project videos to prevent 'stripes' or 'boxes' */
+.veronix-reel-thumb::after {
+  display: none !important;
 }
 
 .veronix-frame-media,
@@ -618,25 +622,33 @@ video.veronix-frame-media {
   color: var(--veronix-text);
   text-decoration: none;
   transition: transform 220ms ease;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .veronix-reel-card:hover {
   transform: translateY(-4px);
 }
 
+.veronix-reel-thumb,
+.veronix-reel-media {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
 .veronix-reel-thumb {
   aspect-ratio: 9 / 16;
   border-radius: 24px;
-  background: transparent;
-  box-shadow: none;
   padding: 8px;
-  border: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .veronix-reel-media {
   border-radius: 16px;
-  border: none;
-  outline: none;
 }
 
 .veronix-reel-overlay {

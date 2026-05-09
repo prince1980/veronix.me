@@ -209,7 +209,6 @@ video.veronix-frame-media {
 .veronix-gallery-title,
 .veronix-contact-title {
   margin: 16px 0 28px;
-  margin-left: 0.12em; /* Aggressive optical nudge for perfectly flush vertical alignment */
   color: var(--veronix-text);
   font-size: clamp(40px, 5vw, 66px);
   line-height: 1;
@@ -642,13 +641,18 @@ video.veronix-frame-media {
 .veronix-reel-thumb {
   aspect-ratio: 9 / 16;
   border-radius: 24px;
-  padding: 8px;
   position: relative;
   overflow: hidden;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
 }
 
 .veronix-reel-media {
-  border-radius: 16px;
+  border-radius: 0;
+  border: none !important;
+  outline: none !important;
 }
 
 .veronix-reel-overlay {
@@ -671,7 +675,6 @@ video.veronix-frame-media {
 
 .veronix-reel-title {
   margin-top: 18px;
-  padding-left: 14px;
   color: var(--veronix-text);
   font-size: 18px;
   font-weight: 700;
@@ -679,7 +682,6 @@ video.veronix-frame-media {
 
 .veronix-reel-meta {
   margin-top: 4px;
-  padding-left: 14px;
   font-size: 14px;
 }
 

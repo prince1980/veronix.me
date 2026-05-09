@@ -45,10 +45,8 @@
     shortformGallery: [
       { title: "Project 01", meta: "Short Form" },
       { title: "Project 02", meta: "Short Form" },
-      { title: "Project 03", meta: "Short Form" },
       { title: "Project 04", meta: "Short Form" },
       { title: "Project 05", meta: "Short Form" },
-      { title: "Project 06", meta: "Short Form" },
       { title: "Project 07", meta: "Short Form" },
       { title: "Project 08", meta: "Short Form" }
     ],

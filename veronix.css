@@ -594,7 +594,7 @@ video.veronix-frame-media {
 
 .veronix-reel-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
   margin-top: 30px;
 }
@@ -871,7 +871,7 @@ video.veronix-frame-media {
 
 @media (max-width: 1180px) {
   .veronix-reel-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

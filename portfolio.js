@@ -69,8 +69,8 @@
     },
     footer: {
       copyright: "Copyright 2026 Veronix. All rights reserved.",
-      note: "Instagram, YouTube, and Book a call available for enquiries.",
-      updated: "Book a call"
+      note: "Instagram and YouTube available for enquiries.",
+      updated: ""
     }
   };
 

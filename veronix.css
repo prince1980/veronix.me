@@ -829,20 +829,19 @@ video.veronix-frame-media {
 .veronix-cal-shell {
   position: relative;
   overflow: hidden;
-  height: 720px;
+  min-height: 700px;
   border: 1px solid rgba(209, 172, 103, 0.18);
   border-radius: 20px;
   background: #0c0a07;
   box-shadow:
     0 0 0 1px rgba(209, 172, 103, 0.06),
     0 34px 92px rgba(0, 0, 0, 0.44);
-  pointer-events: auto !important;
 }
 
 .veronix-cal-shell iframe {
   display: block;
   width: 100% !important;
-  height: 100% !important;
+  min-height: 700px !important;
   border: none !important;
   background: #0c0a07 !important;
   border-radius: 20px;
@@ -1071,12 +1070,11 @@ video.veronix-frame-media {
   .veronix-cal-shell {
     margin-left: -6px;
     margin-right: -6px;
-    height: 800px;
-    overflow: hidden;
+    min-height: 780px;
   }
 
   .veronix-cal-shell iframe {
-    height: 100% !important;
+    min-height: 780px !important;
   }
 }
 

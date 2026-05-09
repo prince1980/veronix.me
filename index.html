@@ -60,6 +60,8 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://video.gumlet.io" crossorigin>
   <link rel="dns-prefetch" href="https://video.gumlet.io">
+  <link rel="preconnect" href="https://app.cal.com" crossorigin>
+  <link rel="dns-prefetch" href="https://app.cal.com">
   <link href="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/css/perryw-2023.webflow.4a8586d83.css"
     rel="stylesheet" type="text/css" />
   <link href="./veronix.css" rel="stylesheet" type="text/css" />
@@ -585,7 +587,7 @@
       <div class="text-popup-menu" data-portfolio-text="social.youtube.label">YouTube</div><img
         src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/644ca61c76573b18898f41f8_icon-open.svg"
         loading="lazy" alt="" class="icon-popup-external" />
-    </a><a data-portfolio-href="social.whatsapp.url" href="https://calendly.com/veronixx-media/30min" target="_blank"
+    </a><a data-portfolio-href="social.whatsapp.url" href="https://cal.com/veronix/30min" target="_blank"
       class="popup-menu-item w-inline-block">
       <div class="text-popup-menu" data-portfolio-text="social.whatsapp.label">Book a call</div><img
         src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/644ca61c76573b18898f41f8_icon-open.svg"
@@ -613,7 +615,7 @@
             <div class="text-mobile-menu" data-portfolio-text="social.youtube.label">YouTube</div><img
               src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/63e0b50ea0956f4526968ef1_23-icon-external.svg"
               loading="lazy" alt="" class="icon-external-menu" />
-          </a><a data-portfolio-href="social.whatsapp.url" href="https://calendly.com/veronixx-media/30min"
+          </a><a data-portfolio-href="social.whatsapp.url" href="https://cal.com/veronix/30min"
             target="_blank" class="menu-item w-inline-block">
             <div class="text-mobile-menu" data-portfolio-text="social.whatsapp.label">Book a call</div><img
               src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/63e0b50ea0956f4526968ef1_23-icon-external.svg"
@@ -668,7 +670,7 @@
                         more.</span></div>
                     <div class="veronix-hero-actions">
                       <a class="veronix-button primary" data-portfolio-href="social.whatsapp.url"
-                        href="https://calendly.com/veronixx-media/30min" target="_blank"
+                        href="https://cal.com/veronix/30min" target="_blank"
                         data-portfolio-text="social.whatsapp.label">Book a call</a>
                       <a class="veronix-button secondary" href="#work" data-scroll-link>View Work</a>
                     </div>
@@ -700,7 +702,7 @@
             for social media, commercials, and more.</div>
           <div class="veronix-hero-actions">
             <a class="veronix-button primary" data-portfolio-href="social.whatsapp.url"
-              href="https://calendly.com/veronixx-media/30min" target="_blank"
+              href="https://cal.com/veronix/30min" target="_blank"
               data-portfolio-text="social.whatsapp.label">Book a call</a>
             <a class="veronix-button secondary" href="#work" data-scroll-link>View Work</a>
           </div>
@@ -1002,11 +1004,33 @@
           <h2 class="veronix-request-title" id="request-project-title">Book a call</h2>
           <p class="veronix-request-copy">Let's talk scope, timeline, and budget - no fluff, just clarity.</p>
         </div>
-        <div class="veronix-calendly-shell">
-          <!-- Calendly inline widget begin -->
-          <div class="calendly-inline-widget" data-url="https://calendly.com/veronixx-media/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          <!-- Calendly inline widget end -->
+        <div class="veronix-cal-shell">
+          <!-- Cal.com inline embed begin -->
+          <div id="my-cal-inline-30min" style="width:100%;height:100%;overflow:scroll"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "30min", {origin:"https://app.cal.com"});
+            Cal.ns["30min"]("inline", {
+              elementOrSelector:"#my-cal-inline-30min",
+              config: {"layout":"month_view","theme":"dark","useSlotsViewOnSmallScreen":"true"},
+              calLink: "veronix/30min",
+            });
+            Cal.ns["30min"]("ui", {
+              "cssVarsPerTheme":{
+                "dark":{
+                  "cal-brand":"#d1ac67",
+                  "cal-bg":"#0c0a07",
+                  "cal-text":"#f3efe8",
+                  "cal-border":"rgba(209,172,103,0.14)",
+                  "cal-bg-subtle":"#15110d",
+                  "cal-text-muted":"rgba(243,239,232,0.55)"
+                }
+              },
+              "hideEventTypeDetails":false,
+              "layout":"month_view"
+            });
+          </script>
+          <!-- Cal.com inline embed end -->
         </div>
       </section>
     </div>
@@ -1036,7 +1060,7 @@
                   <div class="text-footer-link" data-portfolio-text="social.youtube.label">YouTube</div><img
                     src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/63e0b50ea0956f4526968ef1_23-icon-external.svg"
                     loading="lazy" alt="" class="icon-external" />
-                </a><a data-portfolio-href="social.whatsapp.url" href="https://calendly.com/veronixx-media/30min"
+                </a><a data-portfolio-href="social.whatsapp.url" href="https://cal.com/veronix/30min"
                   target="_blank" class="footer-link w-inline-block">
                   <div class="text-footer-link" data-portfolio-text="social.whatsapp.label">Book a call</div><img
                     src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/63e0b50ea0956f4526968ef1_23-icon-external.svg"

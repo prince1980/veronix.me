@@ -826,17 +826,25 @@ video.veronix-frame-media {
   line-height: 1.5;
 }
 
-.veronix-calendly-shell {
+.veronix-cal-shell {
+  position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  background: #161616;
-  box-shadow: 0 28px 74px rgba(0, 0, 0, 0.28);
+  min-height: 700px;
+  border: 1px solid rgba(209, 172, 103, 0.18);
+  border-radius: 20px;
+  background: #0c0a07;
+  box-shadow:
+    0 0 0 1px rgba(209, 172, 103, 0.06),
+    0 34px 92px rgba(0, 0, 0, 0.44);
 }
 
-.veronix-calendly-shell .calendly-inline-widget {
-  width: 100%;
-  min-width: 0 !important;
+.veronix-cal-shell iframe {
+  display: block;
+  width: 100% !important;
+  min-height: 700px !important;
+  border: none !important;
+  background: #0c0a07 !important;
+  border-radius: 20px;
 }
 
 .veronix-contact-section {
@@ -1059,13 +1067,14 @@ video.veronix-frame-media {
     margin-bottom: 30px;
   }
 
-  .veronix-calendly-shell {
+  .veronix-cal-shell {
     margin-left: -6px;
     margin-right: -6px;
+    min-height: 780px;
   }
 
-  .veronix-calendly-shell .calendly-inline-widget {
-    height: 760px !important;
+  .veronix-cal-shell iframe {
+    min-height: 780px !important;
   }
 }
 
@@ -1161,8 +1170,8 @@ video.veronix-frame-media {
     font-size: 16px;
   }
 
-  .veronix-calendly-shell {
-    border-radius: 6px;
+  .veronix-cal-shell {
+    border-radius: 12px;
   }
 }
 

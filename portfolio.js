@@ -22,7 +22,7 @@
       },
       whatsapp: {
         label: "Book a call",
-        url: "https://calendly.com/veronixx-media/30min"
+        url: "https://cal.com/veronix/30min"
       }
     },
     home: {

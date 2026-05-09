@@ -163,7 +163,7 @@ video.veronix-frame-media {
 
 .veronix-work-shell {
   width: 100%;
-  padding: 24px 32px 120px;
+  padding: 80px 48px 160px;
 }
 
 .veronix-showreel-block,
@@ -185,12 +185,13 @@ video.veronix-frame-media {
 .veronix-work-copy,
 .veronix-gallery-copy,
 .veronix-contact-copy {
-  margin-bottom: 28px;
+  margin-bottom: 48px;
 }
 
 .veronix-gallery-copy {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
   border-bottom: 1px solid rgba(241, 212, 160, 0.12);
+  margin-bottom: 56px;
 }
 
 .veronix-eyebrow {
@@ -204,7 +205,7 @@ video.veronix-frame-media {
 .veronix-section-title,
 .veronix-gallery-title,
 .veronix-contact-title {
-  margin: 10px 0 12px;
+  margin: 12px 0 16px;
   color: var(--veronix-text);
   font-size: clamp(40px, 5vw, 66px);
   line-height: 1;
@@ -239,7 +240,7 @@ video.veronix-frame-media {
   color: var(--veronix-text);
   text-decoration: none;
   border: 1px solid var(--veronix-stroke);
-  border-radius: 32px;
+  border-radius: 40px;
   background:
     radial-gradient(circle at top right, rgba(241, 212, 160, 0.12), transparent 28%),
     linear-gradient(180deg, rgba(18, 13, 9, 0.98), rgba(8, 8, 8, 0.98));
@@ -514,8 +515,12 @@ video.veronix-frame-media {
 }
 
 .veronix-feature-card {
-  padding: 28px;
+  padding: 40px;
 }
+ 
+ .veronix-contact-card {
+   padding: 64px 56px;
+ }
 
 .veronix-feature-title {
   color: var(--veronix-text);
@@ -637,7 +642,7 @@ video.veronix-frame-media {
 }
 
 .veronix-reel-title {
-  margin-top: 14px;
+  margin-top: 18px;
   color: var(--veronix-text);
   font-size: 18px;
   font-weight: 700;

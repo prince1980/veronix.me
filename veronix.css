@@ -1431,11 +1431,11 @@ body {
 /* --- Cinematic Film Grain Effect --- */
 .hero-noise {
   background-image: url("https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/644af0299bc01254815ae442_noise-overlay-2.png") !important;
-  opacity: 0.08 !important; /* Ultra-subtle base opacity for premium feel */
+  opacity: 0.16 !important; /* Increased for better presence at standard viewing distance */
   animation: veronix-grain-jitter 0.6s steps(12) infinite !important;
   pointer-events: none;
   background-repeat: repeat;
-  background-size: 160px !important; /* Even smaller particles for high-end look */
+  background-size: 240px !important; /* Increased texture scale for cinematic organic look */
   mix-blend-mode: overlay !important;
 }
 

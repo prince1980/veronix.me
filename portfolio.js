@@ -250,44 +250,44 @@
         const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         const canPlayNative = media.canPlayType('application/vnd.apple.mpegurl');
 
-        // Prioritize native HLS on iOS/Safari for better stability in in-app browsers
+        // Quality-First Configuration
         if ((isIOS || isSafari) && canPlayNative) {
           media.src = src;
         } else if (typeof Hls !== 'undefined' && Hls.isSupported()) {
           const hls = new Hls({
-            startLevel: -1, // Let ABR handle the start quality for better reliability
-            capLevelToPlayerSize: true,
+            startLevel: -1, // Will set to highest in MANIFEST_PARSED
+            capLevelToPlayerSize: false, // Don't downscale for smaller screens
             enableWorker: true,
             autoStartLoad: true,
-            manifestLoadingMaxRetry: 5,
-            levelLoadingMaxRetry: 5,
-            fragLoadingMaxRetry: 5
+            maxBufferLength: 30, // Increase buffer for high-res
+            maxMaxBufferLength: 60,
+            manifestLoadingMaxRetry: 10,
+            levelLoadingMaxRetry: 10
           });
           hls.loadSource(src);
           hls.attachMedia(media);
           
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            // No longer forcing the highest level immediately to prevent stalls on slow connections
+            // Force Highest Quality (1080p/2K/4K)
+            // We set currentLevel to the last level (highest) and disable auto-scaling down
+            hls.currentLevel = hls.levels.length - 1;
+            hls.autoLevelEnabled = false; 
+            console.log("Veronix Engine: Quality locked to " + hls.levels[hls.currentLevel].height + "p");
           });
 
-          // Recovery logic for stalls and black screens
+          // Recovery logic - if it fails, try the next highest instead of dropping to low res
           hls.on(Hls.Events.ERROR, function (event, data) {
             if (data.fatal) {
               switch (data.type) {
                 case Hls.ErrorTypes.NETWORK_ERROR:
-                  console.log("HLS Network Error, retrying...");
                   hls.startLoad();
                   break;
                 case Hls.ErrorTypes.MEDIA_ERROR:
-                  console.log("HLS Media Error, recovering...");
                   hls.recoverMediaError();
                   break;
                 default:
-                  console.log("HLS Fatal Error, swapping to native if possible");
                   hls.destroy();
-                  if (canPlayNative) {
-                    media.src = src;
-                  }
+                  if (canPlayNative) media.src = src;
                   break;
               }
             }

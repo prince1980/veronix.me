@@ -277,10 +277,7 @@
             hls.startLoad();
           });
 
-          // Visual stability
-          media.style.opacity = "0";
-          media.style.transition = "opacity 0.5s ease";
-          media.addEventListener("playing", () => media.style.opacity = "1");
+
 
           hls.on(Hls.Events.ERROR, function (event, data) {
             if (data.fatal) {

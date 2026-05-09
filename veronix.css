@@ -772,6 +772,73 @@ video.veronix-frame-media {
   line-height: 1.55;
 }
 
+.veronix-request-section {
+  width: min(1180px, 100%);
+  margin: 124px auto 0;
+}
+
+.veronix-request-header {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.veronix-request-pill {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 28px;
+  padding: 8px 14px;
+  border: 1px solid rgba(109, 153, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(48, 91, 168, 0.24);
+  color: #7ea7ff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.veronix-request-pill-icon {
+  width: 15px;
+  height: 15px;
+  color: currentColor;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.veronix-request-title {
+  margin: 0;
+  color: var(--veronix-text);
+  font-size: clamp(44px, 6vw, 76px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.veronix-request-copy {
+  margin: 24px auto 0;
+  color: rgba(243, 239, 232, 0.62);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.5;
+}
+
+.veronix-calendly-shell {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: #161616;
+  box-shadow: 0 28px 74px rgba(0, 0, 0, 0.28);
+}
+
+.veronix-calendly-shell .calendly-inline-widget {
+  width: 100%;
+  min-width: 0 !important;
+}
+
 .veronix-contact-section {
   padding: 24px 32px 110px;
 }
@@ -854,6 +921,10 @@ video.veronix-frame-media {
 
   .veronix-faq-header {
     margin-bottom: 48px;
+  }
+
+  .veronix-request-section {
+    margin-top: 98px;
   }
 
   .veronix-reel-grid {
@@ -979,6 +1050,23 @@ video.veronix-frame-media {
     height: 36px;
     flex-basis: 36px;
   }
+
+  .veronix-request-section {
+    margin-top: 82px;
+  }
+
+  .veronix-request-header {
+    margin-bottom: 30px;
+  }
+
+  .veronix-calendly-shell {
+    margin-left: -6px;
+    margin-right: -6px;
+  }
+
+  .veronix-calendly-shell .calendly-inline-widget {
+    height: 760px !important;
+  }
 }
 
 @media (max-width: 479px) {
@@ -1057,6 +1145,24 @@ video.veronix-frame-media {
 
   .veronix-faq-question {
     font-size: 17px;
+  }
+
+  .veronix-request-pill {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .veronix-request-title {
+    font-size: clamp(40px, 14vw, 56px);
+  }
+
+  .veronix-request-copy {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+
+  .veronix-calendly-shell {
+    border-radius: 6px;
   }
 }
 

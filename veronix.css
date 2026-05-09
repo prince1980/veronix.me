@@ -209,6 +209,7 @@ video.veronix-frame-media {
 .veronix-gallery-title,
 .veronix-contact-title {
   margin: 16px 0 28px;
+  margin-left: 0.04em; /* Optical alignment for negative letter-spacing */
   color: var(--veronix-text);
   font-size: clamp(40px, 5vw, 66px);
   line-height: 1;

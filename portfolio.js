@@ -16,9 +16,9 @@
         label: "Instagram",
         url: "https://www.instagram.com/veronix.co/"
       },
-      youtube: {
-        label: "YouTube",
-        url: "https://www.youtube.com/@veronix-co"
+      linkedin: {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/"
       },
       whatsapp: {
         label: "Book a call",
@@ -37,8 +37,8 @@
       eyebrow: "Showreel",
       title: "Director's Cut",
       description: "A fast paced montage built to show range, rhythm, premium pacing, and clean visual storytelling.",
-      badge: "Watch on YouTube",
-      link: "https://www.youtube.com/@veronix-co",
+      badge: "Watch on LinkedIn",
+      link: "https://www.linkedin.com/",
       target: "_blank"
     },
 
@@ -53,7 +53,7 @@
     contact: {
       eyebrow: "Contact",
       title: "Start the next edit.",
-      text: "Project enquiries, short form work, and brand collaborations go through the contact link. Instagram and YouTube stay here for browsing work.",
+      text: "Project enquiries, short form work, and brand collaborations go through the contact link. Instagram and LinkedIn stay here for browsing work.",
       primaryLabel: "Book a call",
       note: "Fast replies for project enquiries."
     },
@@ -67,7 +67,7 @@
     },
     footer: {
       copyright: "Copyright 2026 Veronix. All rights reserved.",
-      note: "Instagram and YouTube available for enquiries.",
+      note: "Instagram and LinkedIn available for enquiries.",
       updated: ""
     }
   };

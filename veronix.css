@@ -42,7 +42,8 @@ video.veronix-frame-media {
 
 .nav-indicator-pill,
 .nav-indicator-pill.info {
-  background: var(--veronix-gradient);
+  background-color: var(--veronix-gold-1) !important;
+  background-image: var(--veronix-gradient) !important;
   box-shadow: 0 12px 28px rgba(172, 122, 72, 0.3);
 }
 
@@ -151,10 +152,13 @@ video.veronix-frame-media {
 }
 
 .veronix-button.primary {
-  background: var(--veronix-gradient);
-  color: #1d1207;
-  border-color: rgba(241, 212, 160, 0.34);
+  background-color: var(--veronix-gold-1) !important;
+  background-image: var(--veronix-gradient) !important;
+  color: #1d1207 !important;
+  border-color: rgba(241, 212, 160, 0.4);
   box-shadow: 0 18px 34px rgba(172, 122, 72, 0.22);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 .veronix-button.secondary {

@@ -27,10 +27,10 @@
     },
     home: {
       overline: "Veronix Co - Premium Video Editing Studio",
-      desktopHeadline: "Premium short form video editing &amp; <span class=\"text-hero-serif\">brand visuals</span>",
-      desktopNote: "Veronix is a creative editing studio in Ahmedabad.<br /><span class=\"text-hero-about-formerly\">Specializing in retention-driven reels, social media ads, and creator content.</span>",
-      mobileHeadline: "Premium short form video editing <span>&amp;</span> <span class=\"text-hero-serif\">brand visuals</span>",
-      mobileNote: "<span class=\"text-open-to-new-opportunities\">Veronix is a creative studio based in Ahmedabad.<br /></span>Specializing in retention-driven reels, ads, and creator content.",
+      desktopHeadline: "I edit videos &amp; enhance brand <span class=\"text-hero-serif\">visuals</span>",
+      desktopNote: "Helped over 50+ clients!<br /><span class=\"text-hero-about-formerly\">Delivering top-notch videos for social media, commercials, and more.</span>",
+      mobileHeadline: "I edit videos <span>&amp;</span> enhance brand <span class=\"text-hero-serif\">visuals</span>",
+      mobileNote: "<span class=\"text-open-to-new-opportunities\">Helped over 50+ clients!<br /></span>Delivering top-notch videos for social media, commercials, and more.",
       selectedWorkLabel: "Selected Projects"
     },
     showreel: {

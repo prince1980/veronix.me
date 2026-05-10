@@ -18,7 +18,7 @@
       },
       linkedin: {
         label: "LinkedIn",
-        url: "https://www.linkedin.com/"
+        url: "https://www.linkedin.com/in/veronix-co-919a93371/"
       },
       whatsapp: {
         label: "Book a call",
@@ -38,7 +38,7 @@
       title: "Director's Cut",
       description: "A fast paced montage built to show range, rhythm, premium pacing, and clean visual storytelling.",
       badge: "Watch on LinkedIn",
-      link: "https://www.linkedin.com/",
+      link: "https://www.linkedin.com/in/veronix-co-919a93371/",
       target: "_blank"
     },
 

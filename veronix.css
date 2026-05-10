@@ -27,6 +27,11 @@ video.veronix-frame-media {
   display: block;
 }
 
+/* PERFORMANCE: Kill the artificial Webflow loading screen */
+.loading-overlay {
+  display: none !important;
+}
+
 .logo-block .logomark,
 .chip-logo .logomark,
 .logomark-footer,

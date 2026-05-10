@@ -115,27 +115,8 @@ video.veronix-frame-media {
   display: flex;
   position: absolute;
   inset: 0%;
+  transform: rotate(15deg);
   pointer-events: none;
-  /* Optimized CSS Animation: One-way movement only */
-  animation: veronix-shine 5s cubic-bezier(0.25, 1, 0.5, 1) infinite !important;
-  will-change: transform, opacity;
-}
-
-@keyframes veronix-shine {
-  0% {
-    transform: translateX(-100%) rotate(15deg);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.15;
-  }
-  85% {
-    opacity: 0.15;
-  }
-  100% {
-    transform: translateX(200%) rotate(15deg);
-    opacity: 0;
-  }
 }
 
 .shine-big {

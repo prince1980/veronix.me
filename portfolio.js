@@ -6,9 +6,9 @@
       logo: "./logo.png"
     },
     seo: {
-      homeTitle: "Veronix Co | Premium Short Form Video Editing Studio",
-      aboutTitle: "About Veronix Co | Video Editing Agency in Ahmedabad",
-      description: "Veronix Co is a premium short form video editing studio in Ahmedabad, specializing in retention-driven reels, ads, creator content, and visual storytelling.",
+      homeTitle: "Veronix Co - Premium Video Editing Studio & Brand Visuals",
+      aboutTitle: "About Veronix Co (Veronix.me) | Video Editing Agency in Ahmedabad",
+      description: "Veronix Co (Veronix.me) is a premium short form video editing studio specializing in retention-driven reels, social media ads, and high-end creator content.",
       ogImage: "./assets/og-image.png"
     },
     social: {

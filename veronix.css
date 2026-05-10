@@ -14,6 +14,12 @@
   --veronix-gradient: linear-gradient(135deg, var(--veronix-gold-1), var(--veronix-gold-2));
 }
 
+/* PERFORMANCE: Hardware acceleration for Webflow animations */
+[data-w-id] {
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+}
+
 video.veronix-reel-media,
 video.veronix-frame-media {
   background-color: #000;

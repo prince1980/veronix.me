@@ -261,22 +261,38 @@
       return (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
     }
 
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const media = entry.target;
+          const src = media.getAttribute("data-portfolio-src") || media.getAttribute("src");
+          if (media.hlsInstance && !media.dataset.hlsLoaded) {
+            media.hlsInstance.loadSource(src);
+            media.hlsInstance.attachMedia(media);
+            media.dataset.hlsLoaded = "true";
+          } else if (media.canPlayNative && !media.dataset.nativeLoaded) {
+            media.src = src;
+            media.dataset.nativeLoaded = "true";
+          }
+          observer.unobserve(media);
+        }
+      });
+    }, { rootMargin: "500px 0px" });
+
     document.querySelectorAll("video.veronix-reel-media, video[data-portfolio-video]").forEach(function (media) {
       const src = media.getAttribute("data-portfolio-src") || media.getAttribute("src");
       const chip = media.closest(".veronix-reel-thumb") ? media.closest(".veronix-reel-thumb").querySelector(".veronix-duration-chip") : null;
 
       if (src && src.includes(".m3u8")) {
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         const canPlayNative = media.canPlayType('application/vnd.apple.mpegurl');
+        media.canPlayNative = canPlayNative;
 
-        // Fidelity-First Configuration: Try Hls.js even on iOS for quality control
         if (typeof Hls !== 'undefined' && Hls.isSupported()) {
           const hls = new Hls({
-            startLevel: 99, // Force highest start level
+            startLevel: 99, 
             capLevelToPlayerSize: false,
             enableWorker: true,
-            autoStartLoad: true,
+            autoStartLoad: false, 
             maxBufferLength: 60,
             maxMaxBufferLength: 120,
             manifestLoadingMaxRetry: 20,
@@ -285,10 +301,10 @@
             initialLiveManifestSize: 1,
             enableLowLatencyMode: true
           });
-          hls.loadSource(src);
-          hls.attachMedia(media);
           
-          // Thumbnail stabilizer: Mirror poster to background to prevent "fading" during engine init
+          media.hlsInstance = hls;
+          videoObserver.observe(media);
+          
           if (media.getAttribute("poster")) {
             media.style.backgroundImage = `url(${media.getAttribute("poster")})`;
             media.style.backgroundSize = "cover";
@@ -296,15 +312,11 @@
           }
 
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            // Hard-Filter: Remove any levels below 1080p if possible
-            // If levels exist, pick the absolute highest and lock it
             let highestIndex = hls.levels.length - 1;
             hls.currentLevel = highestIndex;
             hls.autoLevelEnabled = false; 
             hls.startLoad();
           });
-
-
 
           hls.on(Hls.Events.ERROR, function (event, data) {
             if (data.fatal) {
@@ -328,7 +340,7 @@
             hls.subtitleDisplay = false;
           });
         } else if (canPlayNative) {
-          media.src = src;
+          videoObserver.observe(media);
         }
       } else if (src) {
         media.src = src;

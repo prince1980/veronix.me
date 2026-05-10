@@ -1510,6 +1510,14 @@ body {
   display: block !important;
 }
 
+/* --- Performance Fix: Prevent Webflow Interaction Delay --- */
+/* Overrides Webflow's default behavior of hiding animated elements until JS loads, 
+   ensuring the hero section and all content appear instantly. */
+html.w-mod-js:not(.w-mod-ix) [data-w-id] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 @keyframes veronix-grain-jitter {
   0% {
     background-position: 0 0;

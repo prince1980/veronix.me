@@ -6,9 +6,9 @@
       logo: "./logo.png"
     },
     seo: {
-      homeTitle: "Veronix | Video Editing Portfolio",
-      aboutTitle: "Veronix | About",
-      description: "Veronix edits showreels, short form videos, and branded content for creators, businesses, and modern brands.",
+      homeTitle: "Veronix | Premium Short Form Video Editing Studio",
+      aboutTitle: "About Veronix | Video Editing Agency in Ahmedabad",
+      description: "Veronix Co is a premium short form video editing studio in Ahmedabad, specializing in retention-driven reels, ads, creator content, and visual storytelling.",
       ogImage: "./assets/og-image.png"
     },
     social: {
@@ -26,11 +26,11 @@
       }
     },
     home: {
-      overline: "Veronix - Video Editing Studio",
-      desktopHeadline: "I edit videos &amp; enhance brand <span class=\"text-hero-serif\">visuals</span>",
-      desktopNote: "Helped over 50+ clients! <br /><span class=\"text-hero-about-formerly\">Delivering top-notch videos for social media, commercials, and more.</span>",
-      mobileHeadline: "I edit videos <span>&amp; enhance brand</span> <span class=\"text-hero-serif\">visuals</span>",
-      mobileNote: "<span class=\"text-open-to-new-opportunities\">Helped over 50+ clients!<br /></span>Delivering top-notch videos for social media, commercials, and more.",
+      overline: "Veronix Co - Premium Video Editing Studio",
+      desktopHeadline: "Premium short form video editing &amp; <span class=\"text-hero-serif\">brand visuals</span>",
+      desktopNote: "Veronix is a creative editing studio in Ahmedabad.<br /><span class=\"text-hero-about-formerly\">Specializing in retention-driven reels, social media ads, and creator content.</span>",
+      mobileHeadline: "Premium short form video editing <span>&amp;</span> <span class=\"text-hero-serif\">brand visuals</span>",
+      mobileNote: "<span class=\"text-open-to-new-opportunities\">Veronix is a creative studio based in Ahmedabad.<br /></span>Specializing in retention-driven reels, ads, and creator content.",
       selectedWorkLabel: "Selected Projects"
     },
     showreel: {
@@ -58,9 +58,9 @@
       note: "Fast replies for project enquiries."
     },
     about: {
-      heading: "Veronix builds short form edits that feel polished, premium, and hard to skip.",
-      bioHtml: "<span class=\"text-body-info-emphasis\">About Veronix</span><br /><br />Veronix is a video editing brand focused on short form content, visual polish, and sharp pacing for creators, brands, and businesses.<br /><br />The goal is simple: make every second feel intentional and every edit feel premium.<br />",
-      experienceHtml: "<span class=\"text-body-info-emphasis\">What the work focuses on</span><br /><br />Retention driven hooks, clean captions, motion accents, color polish, and platform-ready delivery for reels, ads, and branded edits.<br /><br />If you need sharper visuals and better pacing, this site points people straight to the work and a direct contact link.<br />",
+      heading: "Veronix Co builds short form edits that feel polished, premium, and retention-driven.",
+      bioHtml: "<span class=\"text-body-info-emphasis\">About Veronix Co</span><br /><br />Veronix is a premium video editing studio based in Ahmedabad, Gujarat, India, focused on short form content, visual storytelling, and sharp pacing for creators, brands, and businesses.<br /><br />We specialize in retention-focused editing, ensuring every second feels intentional and every reel, ad, or TikTok feels premium.<br />",
+      experienceHtml: "<span class=\"text-body-info-emphasis\">Our Editing Expertise</span><br /><br />Retention-driven hooks, clean captions, motion graphics, color polish, and platform-ready delivery for Instagram reels, YouTube shorts, social media ads, and branded short form edits.<br /><br />If you need sharper visual aesthetics and premium video editing, explore our work or book a consultation.<br />",
       imageA: "./assets/veronix-founder.png",
       imageB: "./assets/veronix-studio-work.png",
       signature: ""

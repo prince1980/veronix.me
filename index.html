@@ -113,8 +113,18 @@
   <link rel="dns-prefetch" href="https://app.cal.com">
   <link href="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/css/perryw-2023.webflow.4a8586d83.css"
     rel="stylesheet" type="text/css" />
-  <link href="./veronix.css?v=4.5" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link href="./veronix.css?v=4.6" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" defer></script>
+  <style>
+    /* Instant Hero Visibility Overrides */
+    .section-nav, .section-hero, .hero-heading, .text-hero, .container-hero-image {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+    .loading-overlay { display: none !important; }
+  </style>
   <style>
     /* Force hide all subtitles/captions */
     ::cue {
@@ -551,11 +561,6 @@
 </head>
 
 <body class="body">
-  <div data-w-id="a91daa17-edea-3045-e068-85775e828427" class="loading-overlay"><img
-      src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/645df90657e6ec4e4ed2e236_loading-dots.gif"
-      loading="lazy" alt="" class="logo-loading" />
-    <div class="text-loading">Just a moment.</div>
-  </div>
   <div data-w-id="fd80abe2-b514-5dbb-dd2b-42c8f07c8360" class="swipe-indicator-wrapper">
     <div class="text-swipe-to-see-work">SWIPE TO</div><img
       src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/64097027d8cc0cb902ffc6bd_icon-swipe-up.svg"
@@ -1120,8 +1125,7 @@
       }
     });
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js" defer></script>
   <script>
     const scrollRoot = document.querySelector(".locomotive-scroll");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

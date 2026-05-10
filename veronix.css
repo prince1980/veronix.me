@@ -14,6 +14,17 @@
   --veronix-gradient: linear-gradient(135deg, var(--veronix-gold-1), var(--veronix-gold-2));
 }
 
+/* PERFORMANCE: Forced Visibility Overrides to kill Webflow 'Invisible Start' */
+[data-w-id] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hero-heading, .text-hero, .container-hero-image, .section-hero, .section-nav {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* PERFORMANCE: Hardware acceleration for Webflow animations */
 [data-w-id] {
   will-change: transform, opacity;

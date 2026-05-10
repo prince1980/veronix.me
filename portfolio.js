@@ -418,4 +418,24 @@
   bindHideIfEmpty();
   initVideos();
   initFaq();
+  // Mobile / In-App Browser Navbar Fix
+  document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth <= 991;
+    const isInAppBrowser = /Instagram|FBAN|FBAV|Line|Snapchat|LinkedIn/i.test(navigator.userAgent);
+    const navSection = document.querySelector('.section-nav');
+    
+    if (navSection && isMobile) {
+      if (isInAppBrowser) {
+        document.documentElement.classList.add('is-inapp-browser');
+      }
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navSection.classList.add('nav-scrolled');
+        } else {
+          navSection.classList.remove('nav-scrolled');
+        }
+      }, { passive: true });
+    }
+  });
 })();

@@ -1237,9 +1237,9 @@ video.veronix-frame-media {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    background: rgba(6, 6, 6, 0.98) !important; /* Slightly more opaque for mobile */
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
+    background: #060606 !important; /* Solid dark background to prevent fog */
+    backdrop-filter: none !important; /* Remove blur to fix Instagram browser conflict */
+    -webkit-backdrop-filter: none !important;
     border-bottom: 1px solid rgba(241, 212, 160, 0.12);
     padding-top: env(safe-area-inset-top, 0px); /* Account for iOS Notch */
     padding-bottom: 12px;

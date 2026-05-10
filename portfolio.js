@@ -1,13 +1,13 @@
 (function () {
   const portfolio = {
     brand: {
-      name: "Veronix",
+      name: "Veronix Co",
       role: "Video Editing Studio",
       logo: "./logo.png"
     },
     seo: {
-      homeTitle: "Veronix | Premium Short Form Video Editing Studio",
-      aboutTitle: "About Veronix | Video Editing Agency in Ahmedabad",
+      homeTitle: "Veronix Co | Premium Short Form Video Editing Studio",
+      aboutTitle: "About Veronix Co | Video Editing Agency in Ahmedabad",
       description: "Veronix Co is a premium short form video editing studio in Ahmedabad, specializing in retention-driven reels, ads, creator content, and visual storytelling.",
       ogImage: "./assets/og-image.png"
     },
@@ -59,14 +59,14 @@
     },
     about: {
       heading: "Veronix Co builds short form edits that feel polished, premium, and retention-driven.",
-      bioHtml: "<span class=\"text-body-info-emphasis\">About Veronix Co</span><br /><br />Veronix is a premium video editing studio based in Ahmedabad, Gujarat, India, focused on short form content, visual storytelling, and sharp pacing for creators, brands, and businesses.<br /><br />We specialize in retention-focused editing, ensuring every second feels intentional and every reel, ad, or TikTok feels premium.<br />",
+      bioHtml: "<span class=\"text-body-info-emphasis\">About Veronix Co</span><br /><br />Veronix Co is a premium video editing studio based in Ahmedabad, Gujarat, India, focused on short form content, visual storytelling, and sharp pacing for creators, brands, and businesses.<br /><br />We specialize in retention-focused editing, ensuring every second feels intentional and every reel, ad, or TikTok feels premium.<br />",
       experienceHtml: "<span class=\"text-body-info-emphasis\">Our Editing Expertise</span><br /><br />Retention-driven hooks, clean captions, motion graphics, color polish, and platform-ready delivery for Instagram reels, YouTube shorts, social media ads, and branded short form edits.<br /><br />If you need sharper visual aesthetics and premium video editing, explore our work or book a consultation.<br />",
       imageA: "./assets/veronix-founder.png",
       imageB: "./assets/veronix-studio-work.png",
       signature: ""
     },
     footer: {
-      copyright: "Copyright 2026 Veronix. All rights reserved.",
+      copyright: "Copyright 2026 Veronix Co. All rights reserved.",
       note: "Instagram and LinkedIn available for enquiries.",
       updated: ""
     }

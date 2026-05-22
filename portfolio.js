@@ -281,7 +281,8 @@
 
     document.querySelectorAll("video.veronix-reel-media, video[data-portfolio-video]").forEach(function (media) {
       const src = media.getAttribute("data-portfolio-src") || media.getAttribute("src");
-      const chip = media.closest(".veronix-reel-thumb") ? media.closest(".veronix-reel-thumb").querySelector(".veronix-duration-chip") : null;
+      const parentContainer = media.closest(".veronix-reel-thumb") || media.closest(".veronix-showreel-frame");
+      const chip = parentContainer ? parentContainer.querySelector(".veronix-duration-chip") : null;
 
       if (src && src.includes(".m3u8")) {
         const canPlayNative = media.canPlayType('application/vnd.apple.mpegurl');

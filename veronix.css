@@ -26,6 +26,16 @@ video.veronix-frame-media {
   object-fit: cover;
   display: block;
 }
+/* Force Hero elements to skip Webflow entrance delays and be visible immediately behind the loader */
+.hero-portrait-top,
+.hero-portrait-bottom,
+.container-hero-image,
+.hero-fade,
+.nav-bar,
+.swipe-indicator-wrapper {
+  opacity: 1 !important;
+  transform: none !important;
+}
 
 /* Loading overlay is now natively handled by Webflow interactions to perfectly sync with entrance animations */
 

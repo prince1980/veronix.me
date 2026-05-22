@@ -27,9 +27,17 @@ video.veronix-frame-media {
   display: block;
 }
 
-/* PERFORMANCE: Kill the artificial Webflow loading screen */
+/* Restored loading screen to show for 2.5 seconds and then fade out */
 .loading-overlay {
-  display: none !important;
+  animation: fadeOutLoader 0.5s ease-out 2.5s forwards !important;
+  pointer-events: none;
+}
+
+@keyframes fadeOutLoader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .logo-block .logomark,
@@ -1276,10 +1284,7 @@ video.veronix-frame-media {
   }
 }
 
-/* Remove loading delay */
-.loading-overlay {
-  display: none !important;
-}
+/* Removed old loading-overlay display:none override */
 
 /* Custom Scrollbar */
 body::-webkit-scrollbar {

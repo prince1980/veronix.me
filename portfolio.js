@@ -36,7 +36,9 @@
     showreel: {
       eyebrow: "Showreel",
       title: "Director's Cut",
-      description: "A fast paced montage built to show range, rhythm, premium pacing, and clean visual storytelling.",
+      description: "A curated showcase of motion, pacing, and visual direction across selected edits.",
+      cardTitle: "Motion Showcase",
+      cardDescription: "A showcase of short form edits, motion graphics, and visual execution.",
       badge: "Watch on LinkedIn",
       link: "https://www.linkedin.com/in/veronix-co-919a93371/",
       target: "_blank"

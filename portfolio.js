@@ -176,6 +176,11 @@
       const isPlaying = !media.paused && !media.ended;
       toggle.classList.toggle("is-playing", isPlaying);
       toggle.setAttribute("aria-label", isPlaying ? "Pause video" : "Play video");
+      
+      const frame = media.closest(".veronix-showreel-frame") || media.closest(".veronix-reel-thumb");
+      if (frame) {
+        frame.classList.toggle("is-playing", isPlaying);
+      }
     }
 
     function attachToggle(media) {

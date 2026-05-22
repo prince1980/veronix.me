@@ -470,6 +470,14 @@ video.veronix-frame-media {
   right: 20px;
   bottom: 20px;
   z-index: 1;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.veronix-showreel-frame.is-playing .veronix-frame-caption,
+.veronix-reel-thumb.is-playing .veronix-frame-caption {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .veronix-frame-title {

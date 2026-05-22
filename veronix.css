@@ -27,18 +27,7 @@ video.veronix-frame-media {
   display: block;
 }
 
-/* Restored loading screen to show for 2.5 seconds and then fade out */
-.loading-overlay {
-  animation: fadeOutLoader 0.5s ease-out 2.5s forwards !important;
-  pointer-events: none;
-}
-
-@keyframes fadeOutLoader {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
+/* Loading overlay is now natively handled by Webflow interactions to perfectly sync with entrance animations */
 
 .logo-block .logomark,
 .chip-logo .logomark,

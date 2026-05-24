@@ -589,6 +589,11 @@
             setTimeout(function () {
                 locoScroll.update();
             }, 100);
+
+            // Continuously update scroll height when dynamic elements load
+            if (typeof ResizeObserver !== 'undefined') {
+                new ResizeObserver(() => locoScroll.update()).observe(scrollRoot);
+            }
         }
     </script>
 

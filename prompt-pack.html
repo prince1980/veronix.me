@@ -22,21 +22,41 @@
       min-height: 100vh;
       margin: 0;
       font-family: 'Outfit', sans-serif;
+      position: relative;
+      overflow-x: hidden;
     }
     
+    .bg-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, rgba(197, 163, 88, 0.08) 0%, rgba(6, 6, 6, 0) 60%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
     .nav-bar {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      padding: 30px;
+      padding: 40px 30px;
       display: flex;
       justify-content: center;
+      z-index: 10;
     }
     
     .logo-img {
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      opacity: 0.8;
     }
     
     .download-container {
@@ -46,70 +66,107 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 100px 20px 40px 20px;
+      padding: 120px 20px 80px 20px;
+      z-index: 1;
     }
     
     .glass-box {
-      background: rgba(13, 11, 9, 0.6);
-      border: 1px solid var(--veronix-stroke);
-      padding: 60px 40px;
+      background: rgba(13, 11, 9, 0.4);
+      border: 1px solid rgba(241, 212, 160, 0.1);
+      padding: 60px 50px;
       border-radius: 24px;
-      backdrop-filter: blur(20px);
-      max-width: 500px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      max-width: 560px;
       width: 100%;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
     
     .subtitle {
       color: var(--veronix-gold);
-      font-size: 14px;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-      font-weight: 600;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
     
     .title {
-      font-size: 32px;
-      font-weight: 700;
-      margin: 0 0 30px 0;
-      line-height: 1.2;
+      font-size: 38px;
+      font-weight: 800;
+      margin: 0 0 20px 0;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    
+    .description {
+      color: var(--veronix-muted);
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      font-weight: 300;
     }
     
     .download-button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       background: var(--veronix-gradient);
       color: var(--veronix-bg);
       padding: 18px 40px;
       border-radius: 40px;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: none;
-      font-size: 16px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 15px;
+      transition: all 0.3s ease;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      box-shadow: 0 10px 30px rgba(197, 163, 88, 0.15);
     }
     
     .download-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(197, 163, 88, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(197, 163, 88, 0.3);
+    }
+
+    .download-button svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px;
+      color: rgba(243, 239, 232, 0.3);
+      font-size: 13px;
+      letter-spacing: 1px;
     }
     
     @media screen and (max-width: 479px) {
       .glass-box {
-        padding: 40px 20px;
+        padding: 40px 24px;
       }
       .title {
-        font-size: 26px;
+        font-size: 30px;
+      }
+      .description {
+        font-size: 15px;
+        margin-bottom: 35px;
       }
       .download-button {
         padding: 16px 30px;
         font-size: 14px;
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
   
+  <div class="bg-glow"></div>
+
   <div class="nav-bar">
     <a href="./"><img src="./logo.png" alt="Veronix Logo" class="logo-img" /></a>
   </div>
@@ -118,9 +175,19 @@
     <div class="glass-box">
       <div class="subtitle">Exclusive Download</div>
       <h1 class="title">The Higgsfield Automation Prompt Pack</h1>
-      <!-- We will link this directly to the PDF the user provides -->
-      <a href="./Veronix%20x%20Higgsfield%20Prompt%20Pack.pdf" download class="download-button">Download PDF</a>
+      <p class="description">10 essential copy-and-paste automation prompts designed exclusively for the Higgsfield Claude MCP Integration inside After Effects.</p>
+      
+      <a href="./Veronix%20x%20Higgsfield%20Prompt%20Pack.pdf" download class="download-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </svg>
+        Download PDF
+      </a>
     </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 VERONIX CO. ALL RIGHTS RESERVED.
   </div>
 
 </body>

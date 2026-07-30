@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Veronix x Higgsfield Prompt Pack</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            color-scheme: dark;
+            --veronix-gold: #c5a358;
+            --veronix-gold-1: #f1d4a0;
+            --veronix-gold-2: #ac7a48;
+            --veronix-bg: #060606;
+            --veronix-surface: #0d0b09;
+            --veronix-surface-2: #15110d;
+            --veronix-text: #f3efe8;
+            --veronix-muted: rgba(243, 239, 232, 0.7);
+            --veronix-stroke: rgba(241, 212, 160, 0.14);
+            --veronix-gradient: linear-gradient(135deg, var(--veronix-gold-1), var(--veronix-gold-2));
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--veronix-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            background-color: var(--veronix-bg);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--veronix-surface);
+            padding: 70px;
+            border: 1px solid var(--veronix-stroke);
+            border-radius: 12px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--veronix-stroke);
+            padding-bottom: 40px;
+        }
+        .header h1 { 
+            font-size: 52px; 
+            margin-bottom: 10px; 
+            letter-spacing: -1.5px;
+            font-weight: 800;
+            background: var(--veronix-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p { 
+            font-size: 18px; 
+            color: var(--veronix-gold); 
+            margin: 0; 
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        h2 { 
+            font-size: 24px; 
+            color: var(--veronix-text); 
+            margin-top: 50px; 
+            border-bottom: 1px solid var(--veronix-stroke); 
+            padding-bottom: 10px;
+            page-break-after: avoid;
+        }
+        p { font-size: 16px; color: var(--veronix-muted); font-weight: 300; }
+        
+        .script-wrapper {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--veronix-gradient) !important;
+            color: var(--veronix-bg) !important;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .script-box {
+            background-color: var(--veronix-surface-2) !important;
+            border-left: 4px solid var(--veronix-gold) !important;
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .prompt-text {
+            font-size: 16px;
+            color: var(--veronix-text);
+            font-style: italic;
+            font-weight: 400;
+            margin: 15px 0;
+            padding: 20px;
+            background: rgba(241, 212, 160, 0.05) !important;
+            border-radius: 8px;
+            border: 1px dashed var(--veronix-gold-2);
+        }
+        
+        .anatomy-box {
+            margin-top: 20px;
+            background-color: var(--veronix-surface) !important;
+            padding: 20px;
+            border: 1px solid var(--veronix-stroke);
+            border-radius: 8px;
+            font-size: 14px;
+            page-break-inside: avoid;
+        }
+        .anatomy-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: var(--veronix-gold);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+        
+        .checklist-box {
+            background-color: rgba(197, 163, 88, 0.05) !important;
+            border: 1px solid var(--veronix-stroke);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            page-break-inside: avoid;
+            text-align: center;
+        }
+        
+        .download-button {
+            display: inline-block;
+            margin: 20px auto 0 auto;
+            background: var(--veronix-gradient) !important;
+            color: var(--veronix-bg) !important;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+            body {
+                background-color: var(--veronix-bg) !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .container {
+                border: none !important;
+                padding: 40px !important;
+                max-width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h1>VERONIX</h1>
+            <p>The Higgsfield Automation Prompt Pack</p>
+        </div>
+
+        <div class="checklist-box">
+            <h3 style="margin-top: 0; color: var(--veronix-gold-1); font-size: 24px; font-weight: 700;">Step 1: Install the Supercomputer</h3>
+            <p style="color: var(--veronix-muted); font-size: 16px; font-weight: 400;">To use these prompts, you must have the Higgsfield Claude MCP Integration installed directly into your After Effects workspace. Get it here:</p>
+            <a href="https://higgsfield.ai/s/higgsfield-fable-5-in-after-effects-ig-veronix.co-MRXpXL" class="download-button" target="_blank">Download Higgsfield Plugin</a>
+        </div>
+
+        <h2>Step 2: The Core Workflow Prompts</h2>
+        <p>Copy and paste these exact prompts into the Higgsfield panel inside After Effects to instantly automate the most tedious parts of motion design.</p>
+        
+        <!-- PROMPT 1 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 1: The Reference Rebuilder</div>
+            <div class="script-box">
+                <p>Drag and drop a Pinterest screenshot directly into the Higgsfield UI, then use this prompt:</p>
+                <div class="prompt-text">
+                    "Analyze this UI reference image and completely rebuild the layout. Generate the background, buttons, and text as fully editable shape and text layers."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">Instead of spending 3 hours manually drawing rectangles and matching font weights, the AI reverse-engineers the layout into a fully editable scene ready for immediate animation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROMPT 2 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 2: Expression Magic</div>
+            <div class="script-box">
+                <p>Stop Googling for syntax. Select the layer you want to animate and drop this into the chat:</p>
+                <div class="prompt-text">
+                    "Add an inertial bounce expression to this layer's scale property. Make the amplitude 0.05, frequency 2.0, and decay 5.0."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">Giving Claude exact math variables (amplitude/frequency) removes the guesswork, guaranteeing a perfectly tuned, physically accurate bounce.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROMPT 3 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 3: Timeline Automation</div>
+            <div class="script-box">
+                <p>Select multiple layers in your timeline that you want to reveal sequentially, and use this prompt:</p>
+                <div class="prompt-text">
+                    "Write an ExtendScript to loop through all selected layers and stagger their in-points sequentially by exactly 3 frames, starting from the current time indicator."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">Creates the classic "staircase" layer offset instantly. This replaces minutes of dragging individual layers on the timeline by hand.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROMPT 4 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 4: AI Asset Generation</div>
+            <div class="script-box">
+                <p>Instead of switching to Midjourney to find background textures, type this directly inside AE:</p>
+                <div class="prompt-text">
+                    "Generate a cinematic, dark moody background texture with subtle smoke. Import it directly into the project panel and place it at the absolute bottom of this composition."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">Eliminates the entire friction loop of switching browser tabs, downloading files, and dragging them into the project. The AI handles the entire generation and import pipeline.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROMPT 5 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 5: Data-Driven Graphics</div>
+            <div class="script-box">
+                <p>Paste a list of names or data points from a spreadsheet into the chat, along with this prompt:</p>
+                <div class="prompt-text">
+                    "Duplicate this current 'Lower Third' composition for each name in the list below. In each duplicate, swap the main text layer with the corresponding name."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">The ultimate agency hack. Turns a 2-hour manual data entry task for a corporate video into a 10-second automated AI execution.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROMPT 6 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 6: The Motion Thief</div>
+            <div class="script-box">
+                <p>Drag a video reference of a cool animation directly into the Higgsfield UI, and use this prompt:</p>
+                <div class="prompt-text">
+                    "Analyze the motion of the main object in this attached video reference. Replicate its position easing curve onto my selected layer by generating the corresponding keyframes."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">Stop guessing graph editor curves. This forces the AI's vision model to mathematically extract the velocity from a reference and apply it directly to your layer.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROMPT 7 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 7: The Project Cleaner</div>
+            <div class="script-box">
+                <p>When you inherit a messy client file with hundreds of unorganized layers, use this prompt:</p>
+                <div class="prompt-text">
+                    "Analyze this composition. Color label all Text layers Red, all Shape layers Blue, and all Pre-comps Green to organize my timeline."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">Organization separates amateurs from pros. This single prompt instantly color-codes a massive timeline so you can actually read your composition.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROMPT 8 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 8: Audio-Reactive Dynamics</div>
+            <div class="script-box">
+                <p>Make sure you have an Audio Amplitude layer generated in your comp, select your graphic layer, and use this prompt:</p>
+                <div class="prompt-text">
+                    "Link this layer's Opacity to the Audio Amplitude 'Both Channels' slider. Use linear interpolation so when the audio is between 10 and 30, the opacity maps from 0% to 100%."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">Writing interpolation math (linear expressions) is notoriously frustrating. This prompt forces Claude to write the exact mapping algorithm instantly.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROMPT 9 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 9: Bulk Font Swapping</div>
+            <div class="script-box">
+                <p>When a client suddenly decides they hate the font across the entire project, run this prompt:</p>
+                <div class="prompt-text">
+                    "Find every Text Layer in this active composition. Change their font family to 'Outfit-Bold' and perfectly center their anchor points."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">Claude writes an ExtendScript in the background and runs it immediately, changing 50 text layers in 2 seconds without you clicking into a single menu.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROMPT 10 -->
+        <div class="script-wrapper">
+            <div class="badge">Category 10: Seamless Looping</div>
+            <div class="script-box">
+                <p>If you have an animated background or element that needs to loop infinitely, select it and use this prompt:</p>
+                <div class="prompt-text">
+                    "Write an expression for this layer's Time Remap property that creates a seamless infinite loop between the first and last keyframes."
+                </div>
+                <div class="anatomy-box">
+                    <div class="anatomy-title">Why this works</div>
+                    <p style="margin:0; font-size: 14px;">It automatically handles the notoriously annoying 'loopOut' blank frame issue by perfectly writing the expression syntax for you.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="header" style="margin-top: 60px; margin-bottom: 20px; border-bottom: none;">
+            <p style="font-size: 14px; letter-spacing: 4px;">BROUGHT TO YOU BY VERONIX.ME</p>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -170,29 +170,6 @@
         padding: 16px 30px;
         font-size: 14px;
         width: 100%;
-      }
-    }
-  </style>
-  <script>
-    function forceDownload(url, filename) {
-      // Fetch as arrayBuffer and force octet-stream MIME type so iOS doesn't try to natively preview it
-      fetch(url)
-        .then(response => response.arrayBuffer())
-        .then(buffer => {
-          const blob = new Blob([buffer], { type: 'application/octet-stream' });
-          const blobUrl = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.style.display = 'none';
-          a.href = blobUrl;
-          a.download = filename;
-          document.body.appendChild(a);
-          a.click();
-          window.URL.revokeObjectURL(blobUrl);
-          document.body.removeChild(a);
-        })
-        .catch(err => console.error('Download failed', err));
-    }
-  </script>
 </head>
 <body>
   
@@ -208,12 +185,12 @@
       <h1 class="title">The Higgsfield Automation Prompt Pack</h1>
       <p class="description">10 essential copy-and-paste automation prompts designed exclusively for the Higgsfield Claude MCP Integration inside After Effects.</p>
       
-      <button onclick="forceDownload('./Veronix%20x%20Higgsfield%20Prompt%20Pack.pdf', 'Higgsfield_Prompt_Pack_Premium.pdf')" class="download-button">
+      <a href="./Veronix%20x%20Higgsfield%20Prompt%20Pack.pdf" target="_blank" download class="download-button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
         </svg>
         Download PDF
-      </button>
+      </a>
     </div>
   </div>
 

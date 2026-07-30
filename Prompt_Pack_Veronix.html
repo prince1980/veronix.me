@@ -160,11 +160,11 @@
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 20mm; /* Standard physical margins so Chrome doesn't cut off text */
+                margin: 0; /* Remove physical margins to prevent white borders */
             }
             body {
                 background-color: var(--veronix-bg) !important;
-                padding: 0 !important;
+                padding: 20mm !important; /* Pad inward to prevent text clipping */
                 margin: 0 !important;
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;

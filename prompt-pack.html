@@ -175,10 +175,11 @@
   </style>
   <script>
     function forceDownload(url, filename) {
-      // Fetch the file as a blob so the browser doesn't try to open it natively
+      // Fetch as arrayBuffer and force octet-stream MIME type so iOS doesn't try to natively preview it
       fetch(url)
-        .then(response => response.blob())
-        .then(blob => {
+        .then(response => response.arrayBuffer())
+        .then(buffer => {
+          const blob = new Blob([buffer], { type: 'application/octet-stream' });
           const blobUrl = window.URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.style.display = 'none';

@@ -5,11 +5,15 @@
   <title>Higgsfield Prompt Pack | Veronix Co</title>
   <meta content="Download the exclusive Higgsfield Prompt Pack by Veronix Co." name="description" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta name="robots" content="noindex, nofollow" />
   
   <!-- CSS -->
   <link href="./veronix.css" rel="stylesheet" type="text/css" />
   
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       background-color: var(--veronix-bg);
       color: var(--veronix-text);
@@ -42,7 +46,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 40px 20px;
+      padding: 100px 20px 40px 20px;
     }
     
     .glass-box {
@@ -88,6 +92,19 @@
     .download-button:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(197, 163, 88, 0.2);
+    }
+    
+    @media screen and (max-width: 479px) {
+      .glass-box {
+        padding: 40px 20px;
+      }
+      .title {
+        font-size: 26px;
+      }
+      .download-button {
+        padding: 16px 30px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>

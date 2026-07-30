@@ -11,12 +11,12 @@
             --veronix-gold: #c5a358;
             --veronix-gold-1: #f1d4a0;
             --veronix-gold-2: #ac7a48;
-            --veronix-bg: #060606;
-            --veronix-surface: #0d0b09;
-            --veronix-surface-2: #15110d;
+            --veronix-bg: #111111;
+            --veronix-surface: #1a1a1a;
+            --veronix-surface-2: #222222;
             --veronix-text: #f3efe8;
-            --veronix-muted: rgba(243, 239, 232, 0.7);
-            --veronix-stroke: rgba(241, 212, 160, 0.14);
+            --veronix-muted: rgba(243, 239, 232, 0.6);
+            --veronix-stroke: rgba(255, 255, 255, 0.08);
             --veronix-gradient: linear-gradient(135deg, var(--veronix-gold-1), var(--veronix-gold-2));
         }
 
@@ -33,7 +33,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--veronix-surface);
+            background: var(--veronix-bg);
             padding: 70px;
             border: 1px solid var(--veronix-stroke);
             border-radius: 12px;
@@ -49,7 +49,7 @@
             margin-bottom: 10px; 
             letter-spacing: -1.5px;
             font-weight: 800;
-            background: var(--veronix-gradient);
+            background: var(--veronix-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -79,20 +79,21 @@
         
         .badge {
             display: inline-block;
-            background: var(--veronix-gradient) !important;
-            color: var(--veronix-bg) !important;
+            background: var(--veronix-surface-2) !important;
+            color: var(--veronix-text) !important;
+            border: 1px solid var(--veronix-stroke);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .script-box {
-            background-color: var(--veronix-surface-2) !important;
-            border-left: 4px solid var(--veronix-gold) !important;
+            background-color: var(--veronix-surface) !important;
+            border-left: 2px solid var(--veronix-stroke) !important;
             padding: 25px;
             border-radius: 0 8px 8px 0;
         }
@@ -104,14 +105,14 @@
             font-weight: 400;
             margin: 15px 0;
             padding: 20px;
-            background: rgba(241, 212, 160, 0.05) !important;
+            background: var(--veronix-surface-2) !important;
             border-radius: 8px;
-            border: 1px dashed var(--veronix-gold-2);
+            border: 1px dashed var(--veronix-stroke);
         }
         
         .anatomy-box {
             margin-top: 20px;
-            background-color: var(--veronix-surface) !important;
+            background-color: var(--veronix-bg) !important;
             padding: 20px;
             border: 1px solid var(--veronix-stroke);
             border-radius: 8px;
@@ -121,14 +122,14 @@
         .anatomy-title {
             font-size: 13px;
             text-transform: uppercase;
-            color: var(--veronix-gold);
+            color: var(--veronix-muted);
             font-weight: 600;
             letter-spacing: 1.5px;
             margin-bottom: 15px;
         }
         
         .checklist-box {
-            background-color: rgba(197, 163, 88, 0.05) !important;
+            background-color: var(--veronix-surface) !important;
             border: 1px solid var(--veronix-stroke);
             padding: 30px;
             border-radius: 12px;
